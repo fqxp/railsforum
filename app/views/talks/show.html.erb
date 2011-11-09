@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @talk.title %> <em>in <%= @talk.topic.name %></em></h1>
+
+<%= link_to 'New Post', :controller => :posts, :action => :new, :talk_id => @talk.id %>
+<% @posts.each do |post| %>
+  <div class="post">
+    <p>Created at: <%= post.updated_at %></p>
+    <p><%= post.text %></p>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_talk_path(@talk) %> |
+<%= link_to 'Back', talks_path %>

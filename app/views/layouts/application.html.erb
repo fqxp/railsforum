@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wu Sheng Forum</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	<div id="content">
+	<div id="nav">
+		<ul>
+		  <li><%= link_to "Start", overview_index_path %>
+			<%= yield :navigation %>
+		</ul>
+	</div>
+	<div id="content_inner">
+		<%= yield %>
+	</div>
+</div>
+</body>
+</html>

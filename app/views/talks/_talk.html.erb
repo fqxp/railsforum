@@ -1,0 +1,13 @@
+<div class="talk">
+  <div>
+    <%= link_to talk do %>
+      <strong><%= talk.title %></strong> 
+      in <em><%= talk.topic.name %></em>
+    <% end %>
+  </div>
+  <div>Last post at: <%= talk.posts.first.updated_at %></div>
+  <div><em>Last post:</em> 
+    "<%= talk.posts[0].text %>" by X. Y. 
+  </div>
+  <div><%= pluralize talk.posts.count, 'message', 'messages' %>.</div>
+</div>

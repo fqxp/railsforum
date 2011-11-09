@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Text:</b>
+  <%= @post.text %>
+</p>
+
+<p>
+  <b>Created at:</b>
+  <%= @post.created_at %>
+</p>
+
+<p>
+  <b>Updated at:</b>
+  <%= @post.updated_at %>
+</p>
+
+<p>
+  <b>Talk:</b>
+  <%= @post.talk_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>

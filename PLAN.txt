@@ -1,0 +1,26 @@
+Iteration 1
+-----------
+1. [OK] data models
+2. rudimentary topic#show page
+  1. [OK] list of talks, sorted by last post time
+  2. [OK] each talk: title, number of posts, last post time
+  3. [OK] link to talk#show page
+  4. [OK] "new talk" button
+  5. [OK] New Talk form and controller
+3. [OK] rudimentary overview page
+  1. [OK] List of talks, sorted by last post time
+  2. [OK] for each talk, show title, number of posts, last posts
+  3. [OK] Link from talk to talk#show
+4. rudimentary talk#show page
+  1. [OK] title
+  2. [OK] list of posts, sorted by time
+  3. [OK] "new post" button
+  4. [OK] New post view and controller
+
+Iteration 3
+-----------
+1. User model
+2. Add user id to talks and posts
+3. Show user in talk view
+4. Show user in topic view
+5. Show user in overview

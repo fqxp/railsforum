@@ -1,0 +1,34 @@
+<%= form_for(@talk) do |f| %>
+  <% if @talk.errors.any? or @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@talk.errors.count+@post.errors.count, "error") %> prohibited this talk from being saved:</h2>
+
+      <ul>
+      <% @talk.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <%= f.hidden_field :topic_id %>
+  
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+
+  <%= fields_for @post do |f| %>
+    <div class="field">
+      <%= f.label :text %><br />
+      <%= f.text_area :text, :size => '60x8' %>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

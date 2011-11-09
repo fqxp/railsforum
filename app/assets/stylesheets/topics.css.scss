@@ -1,0 +1,16 @@
+// Place all the styles related to the Topics controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topic_description dt {
+  font-size: 110%;
+  font-weight: bold;
+  padding: 4px 6px;
+  margin: 0;
+}
+
+.topic_description dd {
+  font-family: sans-serif;
+  padding: 4px 6px;
+  margin: 0;
+}
