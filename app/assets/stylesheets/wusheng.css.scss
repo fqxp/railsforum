@@ -1,0 +1,72 @@
+body {
+  background-color: #222222;
+  font-family: sans-serif;
+  /*font-size: 62.5%;*/
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#header {
+  max-width: 900px;
+  height: 110px;
+  background-color: #000000;
+  background-image: image-url('wu_sheng_logo.png');
+  background-repeat: no-repeat;
+}
+
+#main {
+  background-color: #dddddd;
+  max-width: 900px;
+  clear: left;
+}
+
+#nav {
+  background-color: #777777;
+  max-width: 100%;
+  min-width: 100px;
+  width: 20.33%;
+  float: left;
+  margin-left: 2.22%;
+
+  table {
+    width: 100%;
+    border: 0px none;
+    td { 
+      border: 0px none;
+    }
+  }
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 2px 6px;
+    display: block;
+  }
+  a:hover { background-color: #aaaaaa; }
+  .current {
+    color: black;
+    background-color:white;
+    a {
+      color: black;
+    }
+  }
+  .count {
+    font-size: 80%;
+    color: white;
+    background-color: #aaaaaa;
+    padding: 2px;
+    border-radius: 4px;
+  }
+}
+
+.content {
+  width: 77.44%;
+  background-color: white;
+  float: left;
+}
+.content-inner
+{
+  padding: 12px 20px;
+}

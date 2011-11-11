@@ -36,7 +36,6 @@ topics.each do |topic|
   100.times do |i|
     talk = Talk.create(
       :title => "Talk #{i}",
-      :started_at => nil,
       :topic_id => topic.id
     )
     

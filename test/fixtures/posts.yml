@@ -2,12 +2,8 @@
 
 one:
   text: MyString
-  created_at: 2011-11-08 13:26:07
-  updated_at: 2011-11-08 13:26:07
   talk: :one
 
 two:
   text: MyString
-  created_at: 2011-11-08 13:26:07
-  updated_at: 2011-11-08 13:26:07
-  talk: :one
+  talk: :two

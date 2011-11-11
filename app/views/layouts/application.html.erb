@@ -7,16 +7,45 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div id="content">
-	<div id="nav">
-		<ul>
-		  <li><%= link_to "Start", overview_index_path %>
-			<%= yield :navigation %>
-		</ul>
-	</div>
-	<div id="content_inner">
-		<%= yield %>
-	</div>
-</div>
+	<div class="container">
+    <div id="header">
+	    &nbsp;
+	  </div>
+    <div id="main">
+    	<div class="content">
+    	  <div class="content-inner">
+      		<%= yield %>
+    		</div>
+    	</div>
+    	<div id="nav">
+<% if false %>
+     		<ul class="topics">
+    		  <li><%= link_to "Start", overview_index_path %></li>
+          <% @topics.each do |topic| %>
+            <li>
+              <%= link_to topic do %>
+                <span style="display:block; float: left;"><%= topic.name %></span>
+                <span style=""><%= topic.talks.count %></span>
+              <% end %>
+            </li>
+          <% end %>
+    			<%= yield :navigation %>
+    		</ul>
+<% end %>
+        <table class="topics">
+          <tr>
+            <td><%= link_to "Start", overview_index_path %></td>
+          </tr>
+          <% @topics.each do |topic| %>
+            <tr class="<%= (defined?(@current_topic)&&topic.id==@current_topic.id) ? 'current' : '' %>">
+                <td><%= link_to topic.name, topic %></td>
+                <td><span class="count"><%= topic.talks.count %></span></td>
+            </tr>
+          <% end %>
+          <%= yield :navigation %>
+        </ul>
+    	</div>
+    </div>
+  </div>
 </body>
 </html>

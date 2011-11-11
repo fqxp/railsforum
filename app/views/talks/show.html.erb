@@ -2,7 +2,7 @@
 
 <h1><%= @talk.title %> <em>in <%= @talk.topic.name %></em></h1>
 
-<%= link_to 'New Post', :controller => :posts, :action => :new, :talk_id => @talk.id %>
+<%= link_to 'New Post', new_post_path(:talk_id => @talk.id), :class => 'button' %>
 <% @posts.each do |post| %>
   <div class="post">
     <p>Created at: <%= post.updated_at %></p>

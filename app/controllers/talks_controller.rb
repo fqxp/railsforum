@@ -15,6 +15,7 @@ class TalksController < ApplicationController
   def show
     @talk = Talk.find(params[:id])
     @posts = Post.where(:talk_id => @talk.id).order('updated_at')
+    @current_topic = @talk.topic
 
     respond_to do |format|
       format.html # show.html.erb
@@ -38,6 +39,7 @@ class TalksController < ApplicationController
   # GET /talks/1/edit
   def edit
     @talk = Talk.find(params[:id])
+    @post = Post.where(:talk_id => @talk.id).first
   end
 
   # POST /talks

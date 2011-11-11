@@ -3,6 +3,7 @@ require 'test_helper'
 class TalksControllerTest < ActionController::TestCase
   setup do
     @talk = talks(:one)
+    @post = posts(:one)
   end
 
   test "should get index" do
@@ -12,13 +13,22 @@ class TalksControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, { :topic_id => topics(:one).id }
     assert_response :success
   end
 
   test "should create talk" do
     assert_difference('Talk.count') do
-      post :create, talk: @talk.attributes
+      post :create, talk: @talk.attributes, post: @post.attributes
+    end
+
+    assert_redirected_to talk_path(assigns(:talk))
+  end
+  
+  test "should create post too" do 
+    assert_difference('Post.count', +1) do
+    #assert_difference('Post.count') do
+      post :create, talk: @talk.attributes, post: @post.attributes
     end
 
     assert_redirected_to talk_path(assigns(:talk))

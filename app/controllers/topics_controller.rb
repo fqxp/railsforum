@@ -15,6 +15,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @talks = Talk.where(:topic_id => params[:id]).includes(:posts).order('posts.updated_at DESC')
+    @current_topic = @topic
 
     respond_to do |format|
       format.html # show.html.erb

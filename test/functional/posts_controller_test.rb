@@ -12,7 +12,7 @@ class PostsControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new
+    get :new, { :talk_id => talks(:one).id }
     assert_response :success
   end
 

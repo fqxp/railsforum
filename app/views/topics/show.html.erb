@@ -2,13 +2,13 @@
 
 <h1>Topic: <%= @topic.name %></h1>
 
-<%= link_to "New Talk", :controller => 'talks', :action => 'new', :topic_id => @topic.id %>
+<%= link_to "New Talk", new_talk_path(:topic_id => @topic.id), :class => 'button'   %>
 
 <% @talks.each do |talk| %>
   <%= render talk %>
 <% end %>
 
-<%= link_to 'New Talk', new_talk_path %>
+<%= link_to "New Talk", new_talk_path(:topic_id => @topic.id), :class => 'button'   %>
 
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
