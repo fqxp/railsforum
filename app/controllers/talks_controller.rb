@@ -1,15 +1,4 @@
 class TalksController < ApplicationController
-  # GET /talks
-  # GET /talks.json
-  def index
-    @talks = Talk.all
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @talks }
-    end
-  end
-
   # GET /talks/1
   # GET /talks/1.json
   def show

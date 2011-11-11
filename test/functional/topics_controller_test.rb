@@ -5,12 +5,6 @@ class TopicsControllerTest < ActionController::TestCase
     @topic = topics(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:topics)
-  end
-
   test "should get new" do
     get :new
     assert_response :success

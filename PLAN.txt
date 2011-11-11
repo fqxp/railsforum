@@ -29,6 +29,12 @@ Iteration 3
 
 Iteration 4
 -----------
+1. [OK] New post, redirect to talk page
+2. [OK] Remove list talks page
+3. [OK] Remove list posts page
+
+Iteration 5
+-----------
 1. User model
 2. Add user id to talks and posts
 3. Show user in talk view

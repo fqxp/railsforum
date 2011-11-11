@@ -6,12 +6,6 @@ class TalksControllerTest < ActionController::TestCase
     @post = posts(:one)
   end
 
-  test "should get index" do
-    get :index
-    assert_response :success
-    assert_not_nil assigns(:talks)
-  end
-
   test "should get new" do
     get :new, { :topic_id => topics(:one).id }
     assert_response :success
