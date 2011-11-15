@@ -53,7 +53,7 @@ class TalksController < ApplicationController
             @post.talk_id = @talk.id
             @post.save!
             
-            format.html { redirect_to @talk, notice: 'Talk was successfully created.' }
+            format.html { redirect_to @talk, notice: I18n.t('.talk_success_msg') }
             format.json { render json: @talk, status: :created, location: @talk }
           end
         else

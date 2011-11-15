@@ -2,6 +2,6 @@
   $('form').enable_submit_if_possible('input#talk_title, textarea#post_text');
 <% end %>
 
-<h1>New talk in <%= @topic.name %></h1>
+<h1><%= t('.title', :topic => @topic.name) %></h1>
 
 <%= render 'form' %>

@@ -2,13 +2,14 @@
   <div>
     <%= link_to talk do %>
       <strong><%= talk.title %></strong> 
-      in <em><%= talk.topic.name %></em>
+      <%=t '.in' %>
+      <em><%= talk.topic.name %></em>
     <% end %>
   </div>
-  <div>Last post at: <%= talk.posts.first.updated_at %></div>
-  <div><em>Last post:</em> 
+  <div><%=t '.latest_post' %>: <%= talk.posts.first.updated_at %></div>
+  <div>
     "<%= talk.posts[0].text %>"
-    <% if talk.posts[0].user %>by <%= talk.posts[0].user.username %><% end %>
+    <% if talk.posts[0].user %><%=t '.by' %> <%= talk.posts[0].user.realname %><% end %>
   </div>
-  <div><%= pluralize talk.posts.count, 'message', 'messages' %>.</div>
+  <div><%=t '.messages', :count => talk.posts.count %></div>
 </div>

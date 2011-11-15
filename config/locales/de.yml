@@ -1,0 +1,85 @@
+de:
+  error_msg:
+    one:                "Es ist ein Fehler aufgetreten:"
+    other:              "Es sind %{count} Fehler aufgetreten:"
+  talk_success_msg:     "Unterhaltung wurde begonnen"
+  password_missing_msg: "fehlt"
+
+  activerecord:
+    errors:
+      messages:
+        inclusion:      "ist nicht in der Liste enthalten"
+        blank:          "darf nicht leer sein"
+        password:       "Passwort fehlt"
+      models:
+        user:
+          attributes:
+            password:
+              confirmation: "stimmt nicht mit wiederholtem Passwort überein"
+    attributes:
+      post:
+        text:           "Text"
+      talk:
+        title:          "Titel"
+      user:
+        username:       "Username"
+        realname:       "Realname"
+        email_address:  "eMail-Adresse"
+        password:       "Passwort"
+        
+  layouts:
+    application:
+      forum_title:      "Rails-Forum"
+      log_out:          "Abmelden"
+      start_page:       "Startseite"
+
+  overview:
+    index:
+      title:            "Überblick"
+    
+  posts:
+    edit:
+      title:            "Beitrag bearbeiten"
+    new:
+      title:            "Neuer Beitrag"
+    form:
+      text:             "Text des Beitrags"
+      submit:           "Beitrag abschicken"
+
+  talks:
+    new:
+      title:            "Neue Unterhaltung in %{topic}"
+    form:
+      title:            "Titel"
+      submit:           "Unterhaltung beginnen"
+    talk:
+      in:               "in"
+      latest_post:      "Letzter Beitrag"
+      by:               "von"
+      messages:
+        one:            "Ein Beitrag"
+        other:          "%{count} Beiträge"
+
+  topics:
+    show:
+      title:            "Thema: %{topic}"
+      new_talk:         "Neue Unterhaltung beginnen"
+
+  users:
+    index:
+      title:          "User"
+      username:       "Username"
+      you:            "du"
+      realname:       "Realname"
+      email_address:  "eMail-Adresse"
+      show:           "Anzeigen"
+      edit:           "Bearbeiten"
+      destroy:        "Löschen"
+      confirm_destroy: "Sind Sie sicher?"
+      new_user:       "Neue_n User_in anlegen"
+    edit:
+      title:          "User_in bearbeiten"
+    form:
+      password:       "Passwort"
+      confirm_password: "Passwort wiederholen"
+      submit:         "User_in anlegen"

@@ -1,9 +1,9 @@
-<h1>New post</h1>
+<h1><%= t('.title') %></h1>
 
 <%= form_for(@post) do |f| %>
   <% if @post.errors.any? or @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@post.errors.count+@post.errors.count, "error") %> prohibited this talk from being saved:</h2>
+      <h2><%= t('error_msg', :count => @post.errors.count) %></h2>
 
       <ul>
       <% @post.errors.full_messages.each do |msg| %>
@@ -16,7 +16,7 @@
   <%= render :partial => 'posts/form', :locals => { :post => @post } %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>
 

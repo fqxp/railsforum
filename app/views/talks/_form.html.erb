@@ -1,8 +1,8 @@
 <%= form_for @talk, :html => { :class => 'new_talk_form' } do |f| %>
   <% if @talk.errors.any? or @post.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@talk.errors.count+@post.errors.count, "error") %> prohibited this talk from being saved:</h2>
-
+      <h2><%= t('error_msg', :count => @post.errors.count) %></h2>
+    
       <ul>
       <% @talk.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -17,13 +17,13 @@
   <%= f.hidden_field :topic_id %>
   
   <div class="field">
-    <%= f.label :title %><br />
+    <%= f.label :title, t('.title') %><br />
     <%= f.text_field :title %>
   </div>
 
   <%= render :partial => 'posts/form', :locals => { :post => @post } %>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit t('.submit') %>
   </div>
 <% end %>

@@ -1,13 +1,13 @@
-<h1>Listing users</h1>
+<h1><%=t '.title' %></h1>
 <% if notice %>
   <p id="notice"><%= notice %>
 <% end %>
 
 <table>
   <tr>
-    <th>Username</th>
-    <th>Realname</th>
-    <th>Email address</th>
+    <th><%= t('.username') %></th>
+    <th><%= t('.realname') %></th>
+    <th><%= t('.email_address') %></th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,16 +15,21 @@
 
 <% @users.each do |user| %>
   <tr>
-    <td><%= user.username %></td>
+    <td><%= user.username %>
+      <% if session[:user_id] == user.id %><em>(<%= t('.you') %>)</em><% end %>
+    </td>
     <td><%= user.realname %></td>
     <td><%= user.email_address %></td>
-    <td><%= link_to 'Show', user %></td>
-    <td><%= link_to 'Edit', edit_user_path(user) %></td>
-    <td><%= link_to 'Destroy', user, confirm: 'Are you sure?', method: :delete %></td>
+    <td><%= link_to t('.show'), user %></td>
+    <td><%= link_to t('.edit'), edit_user_path(user) %></td>
+    <td>
+      <% if session[:user_id] != user.id %>
+        <%= link_to t('.destroy'), user, confirm: t('.confirm_destroy'), method: :delete %></td>
+      <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New User', new_user_path, :class => 'button' %>
+<%= link_to t('.new_user'), new_user_path, :class => 'button' %>

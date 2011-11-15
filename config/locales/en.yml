@@ -3,3 +3,65 @@
 
 en:
   hello: "Hello world"
+  error_msg:
+    one:              "1 error prohibited this talk from being saved:"
+    other:            "%{count} errors prohibited this talk from being saved:"
+  talk_success_msg:   "Talk was successfully created"
+  password_missing_msg: "Password is missing"
+
+  layouts:
+    application:
+      forum_title:    "Rails forum"
+      log_out:        "Log out"
+      start_page:     "Home"
+
+  overview:
+    index:
+      title:          "Overview"
+
+  posts:
+    edit:
+      title:          "Edit post"
+    new:
+      title:          "New post"
+    form:
+      text:           "Post text"
+      submit:         "Send post"
+
+  talks:
+    new:
+      title:          "New talk in %{topic}"
+    form:
+      title:          "Title"
+      submit:         "Send post"
+    talk:
+      in:             "in"
+      latest_post:    "Latest post"
+      by:             "by"
+      messages:
+        one:          "One post"
+        other:        "%{count} posts"
+
+  topics:
+    show:
+      title:          "Topic: %{topic}"
+      new_talk:       "Begin new talk"
+
+  users:
+    index:
+      title:          "Users"
+      username:       "User name"
+      you:            "you"
+      realname:       "Real name"
+      email_address:  "Email address"
+      show:           "Show"
+      edit:           "Edit"
+      destroy:        "Destroy"
+      confirm_destroy: "Are you sure?"
+      new_user:       "New User"
+    edit:
+      title:          "Edit user"
+    form:
+      password:       "Password"
+      confirm_password: "Confirm password"
+      submit:         "Create user"

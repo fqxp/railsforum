@@ -1,3 +1,20 @@
+RELEASE MILESTONE 1
+===================
+1. Topics/Talks/Posts
+  - [OK] create new talk
+  - [OK] new post
+  - edit own post
+  - cite post
+  - HTML posts (wysiwyg editor)
+  - nicely layouted views
+2. User authentication/authorization
+  - invite new users (for normal users)
+  - edit own user
+3. Admin area
+  - admin user editor: create, delete, edit
+  - mark admin user
+4. i18n/l10n
+
 Iteration 1
 -----------
 1. [OK] data models
@@ -45,8 +62,11 @@ Iteration 5
 
 Iteration 6
 -----------
-1. 
+1. [OK] i18n
+2. [OK] l10n -> de
 
-Iteration 6
+Iteration 7
 -----------
-1. Add avatar for users
+1. Edit own user data
+2. Invite function: let user enter one or more addresses, then send e-mails with a link for entering user data
+3. Upload avatar

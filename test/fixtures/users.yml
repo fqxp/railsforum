@@ -4,12 +4,14 @@ one:
   username: user_one
   hashed_password: <%= User.encrypt_password('secret!', SALT) %>
   salt: <%= SALT %>
-  realname: MyString
+  realname: 'User One'
   email_address: one@example.org
+  is_admin: true
 
 two:
   username: user_two
   hashed_password: <%= User.encrypt_password('secret!', SALT) %>
   salt: <%= SALT %>
-  realname: MyString
+  realname: 'User Two'
   email_address: two@example.org
+  is_admin: false
