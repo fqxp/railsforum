@@ -1,12 +1,16 @@
 Railsforum::Application.routes.draw do
+  get 'overview/index'
+  get 'admin' => "admin#index"
+  
+  controller :sessions do
+    get 'login' => :new
+    post 'login' => :create
+    get 'logout' => :destroy
+  end
+
   resources :users
-
   resources :posts
-
   resources :talks
-
-  get "overview/index"
-
   resources :topics
 
   # The priority is based upon order of creation:

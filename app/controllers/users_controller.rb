@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
+  skip_before_filter :authorize
+  
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    @users = User.order(:username)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -44,7 +46,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -60,7 +62,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.html { redirect_to users_url, notice: 'User #{@user.username} was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

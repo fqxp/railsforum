@@ -35,8 +35,18 @@ Iteration 4
 
 Iteration 5
 -----------
-1. User model
-2. Add user id to talks and posts
-3. Show user in talk view
-4. Show user in topic view
-5. Show user in overview
+1. [OK] User model
+2. [OK] Add user id to posts
+3. [OK] Add user id to talks
+4. [OK] Show user in talk view
+5. [OK] Show user in overview
+6. [OK] Secure application against users not logged in
+7. [OK] Update/write tests
+
+Iteration 6
+-----------
+1. 
+
+Iteration 6
+-----------
+1. Add avatar for users

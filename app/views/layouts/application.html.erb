@@ -4,12 +4,21 @@
   <title>Wu Sheng Forum</title>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
+  <script>
+    $(document).ready(function() {
+      <%= yield :jquery_script %>
+    })
+  </script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 	<div class="container">
     <div id="header">
-	    &nbsp;
+      <div class="navigation">
+        <% if session[:user_id] %>
+  	      <%= link_to "Log out", logout_path %>
+        <% end %>
+       </div>
 	  </div>
     <div id="main">
     	<div class="content">
@@ -18,20 +27,6 @@
     		</div>
     	</div>
     	<div id="nav">
-<% if false %>
-     		<ul class="topics">
-    		  <li><%= link_to "Start", overview_index_path %></li>
-          <% @topics.each do |topic| %>
-            <li>
-              <%= link_to topic do %>
-                <span style="display:block; float: left;"><%= topic.name %></span>
-                <span style=""><%= topic.talks.count %></span>
-              <% end %>
-            </li>
-          <% end %>
-    			<%= yield :navigation %>
-    		</ul>
-<% end %>
         <table class="topics">
           <tr>
             <td><%= link_to "Start", overview_index_path %></td>

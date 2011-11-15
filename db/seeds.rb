@@ -9,6 +9,7 @@
 Post.delete_all
 Talk.delete_all
 Topic.delete_all
+User.delete_all
 
 topics = []
 topics << Topic.create(
@@ -33,13 +34,13 @@ topics << Topic.create(
 )
 
 topics.each do |topic|
-  100.times do |i|
+  50.times do |i|
     talk = Talk.create(
       :title => "Talk #{i}",
       :topic_id => topic.id
     )
     
-    50.times do |j|
+    20.times do |j|
       begin
         Post.create(
           :text => "Was ich noch sagen wollte usw. #{i}/#{j}",

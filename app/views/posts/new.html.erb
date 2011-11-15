@@ -1,5 +1,23 @@
 <h1>New post</h1>
 
-<%= render 'form' %>
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? or @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count+@post.errors.count, "error") %> prohibited this talk from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render :partial => 'posts/form', :locals => { :post => @post } %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 
 <%= link_to 'Back', posts_path %>

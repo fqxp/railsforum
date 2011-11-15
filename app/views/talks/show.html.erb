@@ -1,14 +1,31 @@
+<% content_for :jquery_script do %>
+  $('.new_post_form').enable_submit_if_possible('textarea#post_text');
+<% end %>
+
 <p id="notice"><%= notice %></p>
 
 <h1><%= @talk.title %> <em>in <%= @talk.topic.name %></em></h1>
 
-<%= link_to 'New Post', new_post_path(:talk_id => @talk.id), :class => 'button' %>
 <% @posts.each do |post| %>
+  <% if flash[:current_post_id] and flash[:current_post_id]==post.id %>
+  <a name="current"></a>
+  <div class="post current-post">
+  <% else %>
   <div class="post">
+  <% end %>
     <p>Created at: <%= post.updated_at %></p>
+    <% if post.user %>
+      <p>by <%= post.user.username %>
+    <% end %>
     <p><%= post.text %></p>
   </div>
 <% end %>
 
-<%= link_to 'Edit', edit_talk_path(@talk) %> |
-<%= link_to 'Back', talks_path %>
+<%= form_for @post, :html => { :class => 'new_post_form' } do |f| %>
+  <%= f.hidden_field :talk_id %>
+  <div class="field">
+    <%= f.label :text, 'Answer' %><br />
+    <%= f.text_area :text, :size => '50x8' %>
+    <%= f.submit %>
+  </div>
+<% end %>

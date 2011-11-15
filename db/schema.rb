@@ -11,21 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111111172844) do
+ActiveRecord::Schema.define(:version => 20111112012814) do
 
   create_table "posts", :force => true do |t|
     t.string   "text"
     t.integer  "talk_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "talks", :force => true do |t|
     t.string   "title"
-    t.datetime "started_at"
     t.integer  "topic_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "topics", :force => true do |t|
@@ -40,9 +41,9 @@ ActiveRecord::Schema.define(:version => 20111111172844) do
     t.string   "hashed_password"
     t.string   "realname"
     t.string   "email_address"
+    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "salt"
   end
 
 end

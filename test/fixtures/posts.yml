@@ -3,7 +3,9 @@
 one:
   text: MyString
   talk: :one
+  user: :one
 
 two:
   text: MyString
   talk: :two
+  user: :two

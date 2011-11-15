@@ -7,3 +7,4 @@ tmp/
 *.pyc
 *.pyo
 .project
+/nbproject/private/

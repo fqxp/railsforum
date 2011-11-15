@@ -15,13 +15,13 @@ class PostsControllerTest < ActionController::TestCase
       post :create, post: @post.attributes
     end
 
-    assert_redirected_to talk_path(@post.talk)
+    assert_redirected_to talk_path(@post.talk, :anchor => 'current')
   end
 
-  test "should get edit" do
-    get :edit, id: @post.to_param
-    assert_response :success
-  end
+#  test "should get edit" do
+#    get :edit, id: @post.to_param
+#    assert_response :success
+#  end
 
   test "should update post" do
     put :update, id: @post.to_param, post: @post.attributes

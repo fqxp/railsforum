@@ -2,6 +2,10 @@
 <% end %>
 
 <h1>Overview#index</h1>
+<% if notice %>
+  <p id="notice"><%= notice %>
+<% end %>
+
 <% @current_talks.each do |talk| %>
   <%= render talk %>
 <% end %>

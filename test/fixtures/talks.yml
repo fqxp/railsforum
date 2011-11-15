@@ -3,7 +3,9 @@
 one:
   title: MyString
   topic: :one
+  user: :one
 
 two:
   title: MyString
-  topic: :one
+  topic: :two
+  user: :two

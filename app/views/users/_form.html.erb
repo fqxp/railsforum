@@ -12,20 +12,24 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br />
+    <%= f.label :username %><br/>
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :hashed_password %><br />
-    <%= f.text_field :hashed_password %>
+    <%= f.label :password, "Password:" %><br/>
+    <%= f.password_field :password, :size => 40 %>
   </div>
   <div class="field">
-    <%= f.label :realname %><br />
+    <%= f.label :password, "Confirm password:" %><br/>
+    <%= f.password_field :password_confirmation, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :realname %><br/>
     <%= f.text_field :realname %>
   </div>
   <div class="field">
-    <%= f.label :email_address %><br />
-    <%= f.text_field :email_address %>
+    <%= f.label :email_address %><br/>
+    <%= f.email_field :email_address %>
   </div>
   <div class="actions">
     <%= f.submit %>

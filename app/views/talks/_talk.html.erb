@@ -7,7 +7,8 @@
   </div>
   <div>Last post at: <%= talk.posts.first.updated_at %></div>
   <div><em>Last post:</em> 
-    "<%= talk.posts[0].text %>" by X. Y. 
+    "<%= talk.posts[0].text %>"
+    <% if talk.posts[0].user %>by <%= talk.posts[0].user.username %><% end %>
   </div>
   <div><%= pluralize talk.posts.count, 'message', 'messages' %>.</div>
 </div>

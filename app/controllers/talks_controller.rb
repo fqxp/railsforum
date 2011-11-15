@@ -5,6 +5,7 @@ class TalksController < ApplicationController
     @talk = Talk.find(params[:id])
     @posts = Post.where(:talk_id => @talk.id).order('updated_at')
     @current_topic = @talk.topic
+    @post = Post.new(:talk => @talk)
 
     respond_to do |format|
       format.html # show.html.erb
@@ -34,9 +35,11 @@ class TalksController < ApplicationController
   # POST /talks
   # POST /talks.json
   def create
+    @post = Post.new(params[:post])
     @talk = Talk.new(params[:talk])
     @topic = Topic.find(@talk.topic_id)
-    @post = Post.new(params[:post])
+    user = User.find(session[:user_id])
+    @post.user = @talk.user = user
     
     respond_to do |format|
       begin

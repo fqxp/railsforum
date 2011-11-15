@@ -1,5 +1,7 @@
+<% content_for :jquery_script do %>
+  $('form').enable_submit_if_possible('input#talk_title, textarea#post_text');
+<% end %>
+
 <h1>New talk in <%= @topic.name %></h1>
 
 <%= render 'form' %>
-
-<%= link_to 'Back', talks_path %>
