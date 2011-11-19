@@ -42,7 +42,7 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should update user" do
     put :update, id: @user.to_param, user: @user_params
-    assert_redirected_to users_path
+    assert_redirected_to root_url
   end
 
   test "should destroy user" do

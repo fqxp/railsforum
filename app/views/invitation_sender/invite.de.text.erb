@@ -1,0 +1,14 @@
+Hallo!
+
+Du wurdest von <%= @invitation.invited_by.realname %> zum Rails-Forum
+eingeladen!
+
+Um dich anzumelden, folge diesem Link:
+
+  <%= url_for(:action => :registration, :controller => :registration, :host => @www_host, :confirm_key => @invitation.confirm_key) %>
+
+Falls du das nicht willst, tu einfach gar nichts. Es werden dir keine
+keine weiteren Nachrichten geschickt.
+
+Schöne Grüße,
+dein Rails-Forum

@@ -67,6 +67,16 @@ Iteration 6
 
 Iteration 7
 -----------
-1. Edit own user data
-2. Invite function: let user enter one or more addresses, then send e-mails with a link for entering user data
-3. Upload avatar
+1. [OK] Invitation model
+2. [OK] Send invitations
+3. [OK] Confirm invitation and edit user data
+4. [OK] Change own user data (no e-mail confirmation yet)
+5. Tests
+
+Iteration 8
+-----------
+5. Upload avatar
+
+Iteration LAST
+--------------
+1. Style the whole site nicely

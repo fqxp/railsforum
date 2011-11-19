@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  skip_before_filter :authorize
+  skip_before_filter :authorize, :except => [:index, :show]
+  before_filter :authorize_by_id, :only => [:edit, :create, :update, :destroy]
   
   # GET /users
   # GET /users.json
@@ -62,7 +63,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to users_url, notice: 'User #{@user.username} was successfully updated.' }
+        format.html { redirect_to root_url, notice: ".settings_saved" }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -82,4 +83,12 @@ class UsersController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  private
+    def authorize_by_id
+      user = User.find(session[:user_id])
+      unless user.is_admin or params[:id].to_i == session[:user_id]
+        redirect_to login_url, :notice => "Your are not allowed to visit the page you requested."
+      end
+    end
 end

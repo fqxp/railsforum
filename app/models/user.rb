@@ -2,10 +2,9 @@ require 'digest/sha2'
 
 class User < ActiveRecord::Base
   validates :username, :uniqueness => true
-  validates :realname, :uniqueness => true
   validates :username, :realname, :language, :presence => true
-#  validates :language, :inclusion => { :in => LANGUAGES.collect { |lang_item| lang_item[1] }}
-  validates :language, :inclusion => { :in => I18n.available_locales }
+
+#  validates :language, :inclusion => { :in => I18n.available_locales }
   validates :password, :confirmation => true
   validate :password_must_be_present
 
@@ -13,6 +12,7 @@ class User < ActiveRecord::Base
   
   has_many :talks
   has_many :posts
+  has_many :invitations
   
   attr_accessor :password_confirmation
   attr_reader :password

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111115193511) do
+ActiveRecord::Schema.define(:version => 20111116121525) do
+
+  create_table "invitations", :force => true do |t|
+    t.string   "email_address"
+    t.string   "confirm_key"
+    t.integer  "invited_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "text"
@@ -39,9 +47,9 @@ ActiveRecord::Schema.define(:version => 20111115193511) do
   create_table "users", :force => true do |t|
     t.string   "username"
     t.string   "hashed_password"
+    t.string   "salt"
     t.string   "realname"
     t.string   "email_address"
-    t.string   "salt"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "is_admin",        :default => false

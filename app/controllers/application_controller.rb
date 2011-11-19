@@ -11,9 +11,12 @@ class ApplicationController < ActionController::Base
   protected
     def set_locale_from_user
       if session[:user_id]
-        user = User.find(session[:user_id])
-        I18n.locale = user.language
-        puts "LOCALE", I18n.locale
+        begin
+          user = User.find(session[:user_id])
+          I18n.locale = user.language
+        rescue ActiveRecord::RecordNotFound
+          I18n.locale = I18n.default_locale
+        end
       else
         I18n.locale = I18n.default_locale
       end

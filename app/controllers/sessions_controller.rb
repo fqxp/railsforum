@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
 
   def create
-    debugger
     if user = User.authenticate(params[:username], params[:password])
       session[:user_id] = user.id
       redirect_to overview_index_url

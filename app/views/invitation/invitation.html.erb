@@ -1,0 +1,23 @@
+<h1><%=t '.title' %></h1>
+
+<%= form_for @invite_addresses, :url => invite_path do |f| %>
+  <% if @invite_addresses.errors.any? %>
+    <div id="error_explanation">
+      <h2><%=t 'error_msg', :count => @invite_addresses.errors.count %></h2>
+
+      <ul>
+      <% @invite_addresses.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :email_address_list %>
+    <%= f.text_area :email_address_list, :escape => false, :size => "50x6" %>
+  </div>
+  <div class="actions">
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>

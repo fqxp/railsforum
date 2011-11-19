@@ -4,6 +4,7 @@ de:
     other:              "Es sind %{count} Fehler aufgetreten:"
   talk_success_msg:     "Unterhaltung wurde begonnen"
   password_missing_msg: "fehlt"
+  invited_users_msg:    "Einladungen an %{email_addresses} wurden verschickt."
 
   activerecord:
     errors:
@@ -26,10 +27,28 @@ de:
         realname:       "Realname"
         email_address:  "eMail-Adresse"
         password:       "Passwort"
-        
+
+  activemodel:
+    errors:
+      messages:
+        inclusion:      "ist nicht in der Liste enthalten"
+        blank:          "darf nicht leer sein"
+        password:       "Passwort fehlt"
+      models:
+        invite_addresses:
+          attributes:
+            email_address_list:
+              blank:      "dürfen nicht leer sein"
+              invalid_email_address: "enthält eine komische Adresse: %{address}"
+    attributes:
+      invite_addresses:
+        email_address_list: "eMail-Adressen"
+
   layouts:
     application:
       forum_title:      "Rails-Forum"
+      settings:         "Einstellungen"
+      invite:           "Einladen"
       log_out:          "Abmelden"
       start_page:       "Startseite"
 
@@ -76,10 +95,20 @@ de:
       edit:           "Bearbeiten"
       destroy:        "Löschen"
       confirm_destroy: "Sind Sie sicher?"
-      new_user:       "Neue_n User_in anlegen"
+      new_user:       "Einstellungen speichern"
     edit:
-      title:          "User_in bearbeiten"
+      title:          "Einstellungen bearbeiten"
     form:
       password:       "Passwort"
       confirm_password: "Passwort wiederholen"
+      submit:         "Speichern"
+
+  invitation:
+    invite:
+      title:          "Neue User_innen einladen"
+      submit:         "User_innen einladen"
+    invitation_sent:  "%{address} wurde eine Einladung per E-Mail geschickt"
+    user_already_invited: "%{address} wurde schon vorher eine Einladung geschickt"
+    user_already_exists:  "%{username} hat sich schon für die Adresse %{address} angemeldet"
+    new_user:
       submit:         "User_in anlegen"

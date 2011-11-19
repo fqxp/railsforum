@@ -7,11 +7,21 @@ Railsforum::Application.routes.draw do
     post 'login' => :create
     get 'logout' => :destroy
   end
-
+  
   resources :users
   resources :posts
   resources :talks
   resources :topics
+
+  controller :invitation do
+    get 'invite' => :invitation
+    post 'invite' => :invite
+  end
+  
+  controller :registration do
+    get 'register' => :registration
+    post 'register' => :register
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -62,7 +72,7 @@ Railsforum::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'overview#index', :as => 'overview'
+  root :to => 'overview#index' #, :as => 'overview'
 
   # See how all your routes lay out with "rake routes"
 

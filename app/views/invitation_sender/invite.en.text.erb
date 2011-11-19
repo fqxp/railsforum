@@ -1,0 +1,12 @@
+Hello!
+
+You have been invited by <%= @invitation.invited_by.realname %> to the great Rails Forum!
+
+To join the forum, just click on this link:
+
+  <%= url_for(:action => :registration, :controller => :registration, :host => @www_host, :confirm_key => @invitation.confirm_key) %>
+
+If this was a mistake, just do nothing. You will get no more messages.
+
+Yours,
+the Rails Forum

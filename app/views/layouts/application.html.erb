@@ -16,6 +16,8 @@
     <div id="header">
       <div class="navigation">
         <% if session[:user_id] %>
+  	      <%= link_to t('.settings'), edit_user_path(session[:user_id]) %>
+  	      <%= link_to t('.invite'), invite_path %>
   	      <%= link_to t('.log_out'), logout_path %>
         <% end %>
        </div>

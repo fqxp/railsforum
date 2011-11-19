@@ -8,10 +8,25 @@ en:
     other:            "%{count} errors prohibited this talk from being saved:"
   talk_success_msg:   "Talk was successfully created"
   password_missing_msg: "Password is missing"
+  invited_users_msg:  "Invitations were sent to %{email_addresses}"
+
+  activemodel:
+    errors:
+      models:
+        invite_addresses:
+          attributes:
+            email_address_list:
+              blank:      "may not be empty"
+              invalid_email_address: "contains a weird address: %{address}"
+    attributes:
+      invite_addresses:
+        email_address_list: "E-mail addresses"
 
   layouts:
     application:
       forum_title:    "Rails forum"
+      settings:       "Settings"
+      invite:         "Invite"
       log_out:        "Log out"
       start_page:     "Home"
 
@@ -60,8 +75,19 @@ en:
       confirm_destroy: "Are you sure?"
       new_user:       "New User"
     edit:
-      title:          "Edit user"
+      title:          "Edit Settings"
     form:
       password:       "Password"
       confirm_password: "Confirm password"
+      submit:         "Save"
+
+  invitation:
+    invite:
+      title:          "Invite new users"
+      submit:         "Invite users"
+    invitations_sent:
+    invitation_sent:  "%{address} has been sent an invitation e-mail"
+    user_already_invited: "%{address} had already received an invitation"
+    user_already_exists:  "%{username} has already set up an acount for address %{address}"
+    new_user:
       submit:         "Create user"

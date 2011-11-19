@@ -27,4 +27,12 @@ Railsforum::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+  
+  # Mail config
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'localhost',
+    #:domain => 'localhost',
+    :enable_starttls_auto => false
+  }
 end
