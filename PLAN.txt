@@ -71,7 +71,7 @@ Iteration 7
 2. [OK] Send invitations
 3. [OK] Confirm invitation and edit user data
 4. [OK] Change own user data (no e-mail confirmation yet)
-5. Tests
+5. [OK] Tests
 
 Iteration 8
 -----------

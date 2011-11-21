@@ -28,16 +28,18 @@
       		<%= yield %>
     		</div>
     	</div>
-    	<div id="nav">
-        <table class="topics">
-          <tr>
-            <td><%= link_to t('.start_page'), overview_index_path %></td>
-          </tr>
+    	<div id="sidebar">
+        <ul class="topics">
+          <li>
+            <%= link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '') %>
+          </li>
           <% @topics.each do |topic| %>
-            <tr class="<%= (defined?(@current_topic)&&topic.id==@current_topic.id) ? 'current' : '' %>">
-                <td><%= link_to topic.name, topic %></td>
-                <td><span class="count"><%= topic.talks.count %></span></td>
-            </tr>
+            <li>
+              <%= link_to topic, :class => ((defined?(@current_topic) && topic.id == @current_topic.id) ? 'current' : '') do %>
+                    <%= topic.name %>
+                    <span class="count"><%= topic.talks.count %></span>
+              <% end %>
+            </li>
           <% end %>
           <%= yield :navigation %>
         </ul>

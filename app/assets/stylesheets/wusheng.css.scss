@@ -1,7 +1,8 @@
 $wusheng-main-color: #CE0011;
+$wusheng-bg-color: #222222;
 
 body {
-  background-color: #222222;
+  background-color: $wusheng-bg-color;
   font-family: sans-serif;
 }
 
@@ -41,46 +42,57 @@ a {
   clear: left;
 }
 
-#nav {
+#sidebar {
   background-color: #777777;
   max-width: 100%;
   min-width: 100px;
-  width: 20.33%;
-  float: left;
-  margin-left: 2.22%;
+  width: 200px;
+  float: right;
+  margin-left: 12px;
+  padding: 0;
 
-  table {
-    width: 100%;
-    border: 0px none;
-    td { 
-      border: 0px none;
-    }
+  ul {
+    padding: 0;
+    margin: 0;
   }
-  a {
+  li {
+    list-style-type: none;
+    border-bottom: 1px solid $wusheng-bg-color;
+    width: 188px;
     color: white;
     text-decoration: none;
-    padding: 2px 6px;
-    display: block;
-  }
-  a:hover { background-color: #aaaaaa; }
-  .current {
-    color: black;
-    background-color:white;
+    float: left;
     a {
-      color: black;
+      display: block;
+      width: 188px;
+      padding: 2px 6px;
+      color: white;
+      text-decoration: none;
+      float: left;
     }
-  }
-  .count {
-    font-size: 80%;
-    color: white;
-    background-color: #aaaaaa;
-    padding: 2px;
-    border-radius: 4px;
+    a:hover { 
+      background-color: #aaaaaa; 
+    }
+    a.current {
+      color: black;
+      background-color: white;
+      a {
+        color: black;
+      }
+    }
+    a .count {
+      font-size: 80%;
+      color: white;
+      background-color: #999999;
+      padding: 2px 6px;
+      border-radius: 12px;
+      float: right;
+    }
   }
 }
 
 .content {
-  width: 77.44%;
+  width: 688px;
   background-color: white;
   float: left;
   margin-bottom: 20px;
