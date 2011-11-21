@@ -10,15 +10,28 @@ class InvitationControllerTest < ActionController::TestCase
     assert_select "form[action=?]", invite_path
   end
   
-  test "should save invitation" do
+  test "should not save invitation" do
     assert_no_difference('Invitation.count') do
       post :invite, {:invite_addresses => { :email_address_list => users(:one).email_address }}
     end
   end
+  
+  test "should not send email" do
+    assert_no_difference('ActionMailer::Base.deliveries.length') do
+      post :invite, {:invite_addresses => { :email_address_list => users(:one).email_address }}
+    end
+  end
 
-  test "should not save invitation" do
+  test "should save invitation" do
     assert_difference('Invitation.count') do
       post :invite, {:invite_addresses => { :email_address_list => "doesnotyetexist@example.org" }}
     end
   end
+
+  test "should send email" do
+    assert_difference('ActionMailer::Base.deliveries.length') do
+      post :invite, {:invite_addresses => { :email_address_list => "doesnotyetexist@example.org" }}
+    end
+  end
 end
+

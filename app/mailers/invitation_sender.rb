@@ -10,6 +10,6 @@ class InvitationSender < ActionMailer::Base
     @invitation = invitation
     @www_host = www_host
     
-    mail to: invitation.email_address
+    mail :to => invitation.email_address
   end
 end
