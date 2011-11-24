@@ -1,0 +1,17 @@
+<% if flash[:current_post_id] and flash[:current_post_id] == post.id %>
+  <a name="current"></a>
+  <div class="post current-post">
+<% else %>
+  <div class="post">
+<% end %>
+    <div class="avatar">
+      <%= link_to user_path(post.user) do %>
+        <%= image_tag post.user.avatar.url(:thumb) %>
+      <% end %>
+    </div>
+    <span class="meta-info">
+      <span class="by-user"><%= link_to post.user.username, user_path(post.user) %></span>
+      <span class="updated-at"><%= human_time post.updated_at %></span>
+    </span>
+    <p><%= post.text %></p>
+  </div>

@@ -11,6 +11,16 @@ Talk.delete_all
 Topic.delete_all
 User.delete_all
 
+SALT = 'NaCl'
+user = User.create(
+  :username => 'frank',
+  :realname => 'Frank',
+  :password => 'hallo123',
+  :language => 'de',
+  :email_address => 'frank@localhost',
+  :is_admin => false,
+)
+
 topics = []
 topics << Topic.create(
   :name => 'Kung Fu',
@@ -37,7 +47,8 @@ topics.each do |topic|
   50.times do |i|
     talk = Talk.create(
       :title => "Talk #{i}",
-      :topic_id => topic.id
+      :topic_id => topic.id,
+      :user => user
     )
     
     20.times do |j|
@@ -47,7 +58,8 @@ topics.each do |topic|
           :created_at => DateTime.new(2011, 11, 7, 0),
           :updated_at => DateTime.new(2011, 11, 8-rand(7).abs, 
             rand(24).abs, rand(60).abs, rand(60).abs),
-          :talk_id => talk.id
+          :talk_id => talk.id,
+          :user => user
         )
 #      rescue Exception => e
 #        puts "Exception #{e}"

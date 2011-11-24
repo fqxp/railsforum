@@ -6,6 +6,20 @@ de:
   password_missing_msg: "fehlt"
   invited_users_msg:    "Einladungen an %{email_addresses} wurden verschickt."
 
+  date:
+    extra:
+      today:            "heute"
+      yesterday:        "gestern"
+      just_now:         "jetzt"
+      minutes_ago:  
+        zero:           "gerade eben"
+        one:            "vor ungefähr einer Minute"
+        other:          "vor ungefähr %{count} Minuten"
+  time:
+    formats:
+      date_without_year: "%A, %e. %B"
+      date:             "%A, %e. %B %Y"
+
   activerecord:
     errors:
       messages:
@@ -73,7 +87,7 @@ de:
       submit:           "Unterhaltung beginnen"
     talk:
       in:               "in"
-      latest_post:      "Letzter Beitrag"
+      latest_post_by:   "Letzter Beitrag von"
       by:               "von"
       messages:
         one:            "Ein Beitrag"

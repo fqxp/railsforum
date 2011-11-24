@@ -4,28 +4,22 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1><%= @talk.title %> <em>in <%= @talk.topic.name %></em></h1>
+<div class="talk-page">
+  <h1>
+    <span class="title"><%= @talk.title %></span> 
+    <span class="topic"><%= @talk.topic.name %></span>
+  </h1>
 
-<% @posts.each do |post| %>
-  <% if flash[:current_post_id] and flash[:current_post_id]==post.id %>
-  <a name="current"></a>
-  <div class="post current-post">
-  <% else %>
-  <div class="post">
+  <% @posts.each do |post| %>
+    <%= render post %>
   <% end %>
-    <p>Created at: <%= post.updated_at %></p>
-    <% if post.user %>
-      <p>by <%= post.user.username %>
-    <% end %>
-    <p><%= post.text %></p>
-  </div>
-<% end %>
-
-<%= form_for @post, :html => { :class => 'new_post_form' } do |f| %>
-  <%= f.hidden_field :talk_id %>
-  <div class="field">
-    <%= f.label :text, 'Answer' %><br />
-    <%= f.text_area :text, :size => '50x8' %>
-    <%= f.submit %>
-  </div>
-<% end %>
+  
+  <%= form_for @post, :html => { :class => 'new-post-form' } do |f| %>
+    <%= f.hidden_field :talk_id %>
+    <div class="field">
+      <%= f.label :text, 'Answer' %><br />
+      <%= f.text_area :text, :size => '50x8' %>
+      <%= f.submit %>
+    </div>
+  <% end %>
+</div>

@@ -3,7 +3,31 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .post {
-  margin: 2px 0;
+  margin: 4px 0;
   padding: 3px 6px;
-  background-color: #cccccc;
+  background-color: white;
+  border-bottom: 1px solid #aaaaaa;
+  font-size: 90%;
+  clear: both;
+  
+  .avatar {
+    float: left;
+    margin-right: 7px;
+    width: 48px;
+    text-align: center;
+  }
+  .meta-info {
+    .by-user a {
+      color: black;
+    }
+    .updated-at {
+      font-size: 75%;
+      padding-right: 1em;
+    }
+  }
+  .new-post-form {
+    textarea {
+      width: 653px;
+    }
+  }
 }

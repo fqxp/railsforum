@@ -10,6 +10,19 @@ en:
   password_missing_msg: "Password is missing"
   invited_users_msg:  "Invitations were sent to %{email_addresses}"
 
+  date:
+    extra:
+      today:            "Today"
+      yesterday:        "Yesterday"
+      minutes_ago:  
+        zero:           "just now"
+        one:            "about a minute ago"
+        other:          "about %{count} minutes ago"
+  time:
+    formats:
+      date_without_year: "%A, %B %e"
+      date:             "%A, %B %e, %Y"
+
   activemodel:
     errors:
       models:
@@ -51,7 +64,7 @@ en:
       submit:         "Send post"
     talk:
       in:             "in"
-      latest_post:    "Latest post"
+      latest_post_at: "Latest post by"
       by:             "by"
       messages:
         one:          "One post"

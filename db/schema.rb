@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111116121525) do
+ActiveRecord::Schema.define(:version => 20111121213810) do
 
   create_table "invitations", :force => true do |t|
     t.string   "email_address"
@@ -52,8 +52,12 @@ ActiveRecord::Schema.define(:version => 20111116121525) do
     t.string   "email_address"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "is_admin",        :default => false
+    t.boolean  "is_admin",            :default => false
     t.string   "language"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
 end

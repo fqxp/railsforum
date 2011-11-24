@@ -3,7 +3,78 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .talk {
-  border: 1px solid red;
-  margin: 2px 0;
-  padding: 3px 6px;
+  margin: 5px 6px;
+  padding: 3px 0;
+  border-bottom: 1px solid #aaaaaa;
+  
+  h1 {
+    font-size: 100%;
+    padding: 0;
+    margin: 4px 6px 2px 6px;
+    line-height: 100%;
+    a {
+      color: #aaaaaa;
+    }
+  }
+  .info {
+    color: #aaaaaa;
+    font-size: 80%;
+    margin: 4px 6px;
+    padding: 0;
+    .count-messages, .latest-post-by {
+      a {
+        color: black;
+        img {
+          vertical-align: text-bottom;
+        }
+      }
+      a:hover {
+        color: #aaaaaa;
+      }
+    }
+    span {
+      margin-right: 8px;
+    }
+    .topic {
+      border: 1px solid black;
+      border-radius: 4px;
+      color: white;
+      background-color: #aaaaaa;
+      padding: 2px 6px;
+      a {
+        color: white;
+      }
+      a:hover {
+        color: black;
+      }
+    }
+  }
+}
+
+.talk-page {
+  h1 {
+    margin: 0;
+    display: block;
+    background-color: #cccccc;
+    min-height: 40px;
+    .title {
+      font-size: 16px;
+      line-height: 16px;
+      background-color: white;
+      margin: 8px 6px;
+      padding: 4px 5px;
+      float: left;
+    }
+    .topic {
+      font-size: 12px;
+      line-height: 12px;
+      border: 1px solid black;
+      border-radius: 4px;
+      color: white;
+      background-color: #aaaaaa;
+      margin: 9px 6px;
+      padding: 4px 6px;
+      float: right;
+    }
+  }
 }

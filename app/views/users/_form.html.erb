@@ -23,6 +23,9 @@
     <%= f.label :realname %><br/>
     <%= f.text_field :realname %>
   </div>
+  <div class="field">
+    <%= f.file_field :avatar %>
+  </div>
   <% if @user.new_record? %>
     <div class="field">
       <%= f.label :password, t('.password') %><br/>

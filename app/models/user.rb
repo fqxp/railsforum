@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
 #  validates :language, :inclusion => { :in => I18n.available_locales }
   validates :password, :confirmation => true
   validate :password_must_be_present
+  
+  has_attached_file :avatar, :styles => { :tiny => '16x16', :thumb => '48x48', :medium => '300x300' },
+    :default_url => '/images/avatar-default.png'
 
   after_initialize :default_values
   

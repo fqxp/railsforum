@@ -7,4 +7,4 @@ tmp/
 *.pyc
 *.pyo
 .project
-/nbproject/private/
+public/system/avatars

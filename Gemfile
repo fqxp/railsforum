@@ -1,12 +1,15 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.1.1'
+gem 'rails-i18n'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
 gem 'basic_active_model'
+
+gem "paperclip", "~> 2.4"
 
 # Gems used only for assets and not required
 # in production environments by default.

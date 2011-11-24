@@ -75,7 +75,7 @@ Iteration 7
 
 Iteration 8
 -----------
-5. Upload avatar
+5. [OK] Upload avatar
 
 Iteration LAST
 --------------

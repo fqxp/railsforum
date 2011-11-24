@@ -35,4 +35,6 @@ Railsforum::Application.configure do
     #:domain => 'localhost',
     :enable_starttls_auto => false
   }
+  
+  config.default_time_zone = 'CET'
 end

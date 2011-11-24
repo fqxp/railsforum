@@ -1,13 +1,9 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <%= image_tag @user.avatar.url(:medium) %>
   <b>Username:</b>
   <%= @user.username %>
-</p>
-
-<p>
-  <b>Hashed password:</b>
-  <%= @user.hashed_password %>
 </p>
 
 <p>

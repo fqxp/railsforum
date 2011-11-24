@@ -1,15 +1,21 @@
 <div class="talk">
-  <div>
+  <h1 class="">
     <%= link_to talk do %>
       <strong><%= talk.title %></strong> 
-      <%=t '.in' %>
-      <em><%= talk.topic.name %></em>
     <% end %>
+  </h1>
+  <div class="info">
+    <span class="count-messages">
+      <%= link_to talk do %>
+        <%=t '.messages', :count => talk.posts.count %>
+      <% end %>
+    </span>
+    <span class="latest-post-by"><%=t '.latest_post_by' %>
+      <%= link_to user_path(talk.posts[0].user), :class => 'by-user' do %>
+        <%= image_tag talk.posts[0].user.avatar.url(:tiny) %>
+        <%= talk.posts[0].user.username %>
+      <% end %></span>
+    <span class="latest-post-at"><%= human_time talk.posts.first.updated_at %></span>
+    <span class="topic"><%= link_to talk.topic.name, talk_path(talk) %></span>
   </div>
-  <div><%=t '.latest_post' %>: <%= talk.posts.first.updated_at %></div>
-  <div>
-    "<%= talk.posts[0].text %>"
-    <% if talk.posts[0].user %><%=t '.by' %> <%= talk.posts[0].user.realname %><% end %>
-  </div>
-  <div><%=t '.messages', :count => talk.posts.count %></div>
 </div>
