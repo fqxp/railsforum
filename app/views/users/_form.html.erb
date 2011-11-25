@@ -12,23 +12,25 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :username %><br/>
+    <%= f.label :username %>
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :email_address %><br/>
+    <%= f.label :email_address %>
     <%= f.email_field :email_address %>
   </div>
   <div class="field">
-    <%= f.label :realname %><br/>
+    <%= f.label :realname %>
     <%= f.text_field :realname %>
   </div>
   <div class="field">
+    <%= image_tag @user.avatar.url(:thumb) %>
+    <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
   <% if @user.new_record? %>
     <div class="field">
-      <%= f.label :password, t('.password') %><br/>
+      <%= f.label :password, t('.password') %>
       <%= f.password_field :password, :size => 40 %>
     </div>
     <% if @user.new_record? %>

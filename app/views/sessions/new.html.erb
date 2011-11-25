@@ -1,20 +1,25 @@
+<% content_for :jquery_script do %>
+  $('form').enable_submit_if_possible('input#talk_title, textarea#post_text');
+<% end %>
+
 <% if flash[:alert] %>
   <p id="notice"><%= flash[:alert] %></p>
 <% end %>
 
-<%= form_tag do %>
-  <legend>Please log in</legend>
-  
-  <div>
-    <label for="username">Username:</label>
-    <%= text_field_tag :username, params[:username] %>
-  </div>
-  <div>
-    <label for="password">Password:</label>
-    <%= password_field_tag :password, params[:password] %>
-  </div>
-  
-  <div>
-    <%= submit_tag "Login" %>
-  </div>
-<% end %>
+<h1><%= t('.title')%></h1>
+<fieldset>
+  <%= form_tag do %>
+    <div class="field">
+      <%= label_tag :username %>
+      <%= text_field_tag :username, params[:username] %>
+    </div>
+    <div class="field">
+      <%= label_tag :password %>
+      <%= password_field_tag :password, params[:password] %>
+    </div>
+    
+    <div class="actions">
+      <%= submit_tag t(".login") %>
+    </div>
+  <% end %>
+</fieldset>

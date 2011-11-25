@@ -7,7 +7,7 @@
   padding: 3px 0;
   border-bottom: 1px solid #aaaaaa;
   
-  h1 {
+  h2 {
     font-size: 100%;
     padding: 0;
     margin: 4px 6px 2px 6px;
@@ -19,6 +19,7 @@
   .info {
     color: #aaaaaa;
     font-size: 80%;
+    line-height: 160%;
     margin: 4px 6px;
     padding: 0;
     .count-messages, .latest-post-by {
@@ -40,7 +41,7 @@
       border-radius: 4px;
       color: white;
       background-color: #aaaaaa;
-      padding: 2px 6px;
+      padding: 1px 6px;
       a {
         color: white;
       }

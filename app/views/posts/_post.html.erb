@@ -13,5 +13,7 @@
       <span class="by-user"><%= link_to post.user.username, user_path(post.user) %></span>
       <span class="updated-at"><%= human_time post.updated_at %></span>
     </span>
-    <p><%= post.text %></p>
+    <div class="content">
+      <%= post.text %>
+    </div>
   </div>

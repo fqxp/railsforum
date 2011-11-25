@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="container">
+	<div id="container">
     <div id="header">
       <div class="navigation">
         <% if session[:user_id] %>
@@ -23,26 +23,28 @@
        </div>
 	  </div>
     <div id="main">
-    	<div class="content">
+    	<div id="sidebar">
+        <ul class="topics">
+          <% if session[:user_id] %>
+            <li>
+              <%= link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '') %>
+            </li>
+            <% @topics.each do |topic| %>
+              <li>
+                <%= link_to topic, :class => ((defined?(@current_topic) && topic.id == @current_topic.id) ? 'current' : '') do %>
+                      <%= topic.name %>
+                      <span class="count"><%= topic.talks.count %></span>
+                <% end %>
+              </li>
+            <% end %>
+            <%= yield :navigation %>
+          <% end %>
+        </ul>
+    	</div>
+    	<div id="content">
     	  <div class="content-inner">
       		<%= yield %>
     		</div>
-    	</div>
-    	<div id="sidebar">
-        <ul class="topics">
-          <li>
-            <%= link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '') %>
-          </li>
-          <% @topics.each do |topic| %>
-            <li>
-              <%= link_to topic, :class => ((defined?(@current_topic) && topic.id == @current_topic.id) ? 'current' : '') do %>
-                    <%= topic.name %>
-                    <span class="count"><%= topic.talks.count %></span>
-              <% end %>
-            </li>
-          <% end %>
-          <%= yield :navigation %>
-        </ul>
     	</div>
     </div>
   </div>

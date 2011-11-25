@@ -4,13 +4,21 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
- *= require wusheng
- *= require smoothness/jquery-ui-1.8.16.custom.css
+ *= require_tree ../../../custom/assets/stylesheets
+ *= require custom-theme/jquery-ui-1.8.16.custom.css
 */
+
+$max-width: 900px;
+$min-width: 475px;
+$sidebar-width: 230px;
+$base-color: #999999;
+$base-color-light: lighten($base-color, 30%);
+$base-color-dark: darken($base-color, 30%);
 
 body {
   background-color: gray;
-  font-family: sans-serif;
+  font-family: Verdana,Arial,sans-serif;
+  font-size: 1em;
 }
 
 a {
@@ -18,40 +26,103 @@ a {
   &:hover {
     text-decoration: none;
   }
+  
+  &.button {
+    color: black;
+    height: 18px;
+    font-size: 12px;
+    background-color: $base-color-light;
+    padding: 2px 4px;
+    border: 1px solid black;
+    border-radius: 4px;
+    &:hover {
+      background-color: $base-color;
+    }
+  }
 }
 
-.container {
-  margin: 0 5%;
+fieldset {
+  background-color: $base-color-light;
+  margin: 4px 0;
+  padding: 6px 12px;
+  border: 1px solid $base-color;
+  .field {
+    margin-bottom: 12px;
+    label {
+      font-size: 90%;
+      font-weight: bold;
+      display: block;
+    }
+    input {
+      font-size: 140%;
+    }
+    input[type=file] {
+      font-size: 100%;
+    }
+  }
+  .actions {
+    text-align: right;
+  }
 }
+
+#container {}
 
 #header {
-  max-width: 900px;
-  height: 110px;
+  width: 90%;
+  max-width: $max-width;
+  min-width: $min-width;
+  height: 120px;
+  margin: auto; /* this centers the div */
   background-color: #000000;
   position: relative;
+  font-size: 80%;
   
   .navigation {
     position: absolute;
     right: 12px;
     bottom: 6px;
+    a {
+      margin-left: 12px;
+    }
   }
 }
 
 #main {
-  background-color: #dddddd;
+  margin: auto;
   max-width: 900px;
+  width: 90%;
+  min-width: 475px;
+  min-height: 300px;
   clear: left;
+  background-color: white;
+  
+  h1 {
+    color: black;
+    background-color: $base-color-light;
+    font-size: 120%;
+    font-weight: normal;
+    margin: 7px 0 0 0;
+    padding: 7px 6px;
+    border-radius: 4px;
+    border: 1px solid $base-color;
+    .button {
+      background-color: white;
+      float: right;
+      position: inline;
+      vertical-align: middle;
+      &:hover { background-color: $base-color; }
+    }
+  }
 }
 
 #sidebar {
-  background-color: #777777;
-  max-width: 100%;
-  min-width: 100px;
-  width: 230px;
+  background-color: $base-color-light;
+  width: $sidebar-width;
   float: right;
-  margin-left: 12px;
-  margin-top: 20px;
-  padding: 0;
+  margin: 60px 8px 0 0;
+  padding: 4px 6px 12px;
+  border-radius: 4px;
+  font-size: 80%;
 
   ul {
     padding: 0;
@@ -60,46 +131,40 @@ a {
   li {
     list-style-type: none;
     border-bottom: 1px solid black;
-    width: 230px;
-    color: white;
     text-decoration: none;
     float: left;
-    a {
+    >* {
       display: block;
-      width: 214px;
+      width: $sidebar-width - 2 * 8px;
       padding: 6px 8px;
-      color: white;
+      color: $base-color-dark;
       text-decoration: none;
       float: left;
-    }
-    a:hover { 
-      background-color: #aaaaaa; 
-    }
-    a.current {
-      color: black;
-      background-color: white;
-      a {
-        color: black;
+      .count {
+        font-size: 80%;
+        color: white;
+        background-color: #999999;
+        padding: 2px 6px;
+        border-radius: 12px;
+        float: right;
       }
     }
-    a .count {
-      font-size: 80%;
-      color: white;
-      background-color: #999999;
-      padding: 2px 6px;
-      border-radius: 12px;
-      float: right;
+    a:hover { 
+      background-color: #aaaaaa !important; 
+    }
+    a.current {
+      background-color: white;
     }
   }
 }
 
-.content {
-  width: 658px;
+#content {
   background-color: white;
-  float: left;
+  margin-right: 250px;
   margin-bottom: 20px;
 }
+
 .content-inner
 {
-  padding: 12px 20px;
+  padding: 8px 12px;
 }

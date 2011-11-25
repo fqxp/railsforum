@@ -41,7 +41,7 @@ en:
       settings:       "Settings"
       invite:         "Invite"
       log_out:        "Log out"
-      start_page:     "Home"
+      start_page:     "Overview"
 
   overview:
     index:
@@ -55,10 +55,18 @@ en:
     form:
       text:           "Post text"
       submit:         "Send post"
+      
+  sessions:
+    new:
+      title:          "Please log in"
+      login:          "Log in"
 
   talks:
     new:
       title:          "New talk in %{topic}"
+    show:
+      answer:         "Answer"
+      submit_post:    "Submit answer"
     form:
       title:          "Title"
       submit:         "Send post"

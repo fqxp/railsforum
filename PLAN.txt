@@ -15,6 +15,11 @@ RELEASE MILESTONE 1
   - mark admin user
 4. i18n/l10n
 
+TODO:
+-----
+- what happens when there is nothing in the db? (reduce seed data)
+
+
 Iteration 1
 -----------
 1. [OK] data models
@@ -75,7 +80,19 @@ Iteration 7
 
 Iteration 8
 -----------
-5. [OK] Upload avatar
+1. [OK] Upload avatar
+
+Iteration 9
+-----------
+1. Fix layout so far
+
+Iteration 10
+------------
+1. 
+
+Iteration
+---------
+1. Install on live server
 
 Iteration LAST
 --------------

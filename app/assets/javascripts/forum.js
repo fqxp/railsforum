@@ -1,6 +1,6 @@
 /* create nice-looking buttons */
 $(document).ready(function () {
-	$('.button').button();
+	//$('.button').button();
 	$('input[type="submit"]').button()
 });
 

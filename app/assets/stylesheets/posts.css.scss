@@ -8,7 +8,6 @@
   background-color: white;
   border-bottom: 1px solid #aaaaaa;
   font-size: 90%;
-  clear: both;
   
   .avatar {
     float: left;
@@ -19,15 +18,15 @@
   .meta-info {
     .by-user a {
       color: black;
+      font-weight: bold;
     }
     .updated-at {
       font-size: 75%;
       padding-right: 1em;
     }
   }
-  .new-post-form {
-    textarea {
-      width: 653px;
-    }
+  .content {
+    margin: 10px 0;
+    margin: 10px 6px;
   }
 }

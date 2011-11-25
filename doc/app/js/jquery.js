@@ -1,5 +1,5 @@
 /*!
- * jQuery JavaScript Library v1.6.2
+ * XXX jQuery JavaScript Library v1.6.2
  * http://jquery.com/
  *
  * Copyright 2011, John Resig

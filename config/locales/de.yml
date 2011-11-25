@@ -64,7 +64,7 @@ de:
       settings:         "Einstellungen"
       invite:           "Einladen"
       log_out:          "Abmelden"
-      start_page:       "Startseite"
+      start_page:       "Überblick"
 
   overview:
     index:
@@ -79,9 +79,17 @@ de:
       text:             "Text des Beitrags"
       submit:           "Beitrag abschicken"
 
+  sessions:
+    new:
+      title:          "Bitte anmelden"
+      login:          "Anmelden"
+
   talks:
     new:
       title:            "Neue Unterhaltung in %{topic}"
+    show:
+      answer:           "Anworten"
+      submit_post:      "Antwort abschicken"
     form:
       title:            "Titel"
       submit:           "Unterhaltung beginnen"
@@ -118,7 +126,7 @@ de:
       submit:         "Speichern"
 
   invitation:
-    invite:
+    invitation:
       title:          "Neue User_innen einladen"
       submit:         "User_innen einladen"
     invitation_sent:  "%{address} wurde eine Einladung per E-Mail geschickt"
