@@ -1,11 +1,11 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authorize
-  before_filter :populate_topics
+  before_filter :populate_categories
   before_filter :set_locale_from_user
   
-  def populate_topics
-    @topics = Topic.all
+  def populate_categories
+    @categories = Category.all
   end
 
   protected

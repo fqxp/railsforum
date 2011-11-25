@@ -123,11 +123,11 @@
   
     <li><a href="./TalksHelper.html">TalksHelper</a>
   
-    <li><a href="./Topic.html">Topic</a>
+    <li><a href="./Category.html">Category</a>
   
-    <li><a href="./TopicsController.html">TopicsController</a>
+    <li><a href="./CategoriesController.html">CategoriesController</a>
   
-    <li><a href="./TopicsHelper.html">TopicsHelper</a>
+    <li><a href="./CategoriesHelper.html">CategoriesHelper</a>
   
     <li><a href="./User.html">User</a>
   
@@ -185,7 +185,7 @@
             <pre><span class="ruby-comment"># File app/controllers/talks_controller.rb, line 36</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@talk</span> = <span class="ruby-constant">Talk</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:talk</span>])
-  <span class="ruby-ivar">@topic</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@talk</span>.<span class="ruby-identifier">topic_id</span>)
+  <span class="ruby-ivar">@category</span> = <span class="ruby-constant">Category</span>.<span class="ruby-identifier">find</span>(<span class="ruby-ivar">@talk</span>.<span class="ruby-identifier">category_id</span>)
   <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:post</span>])
   
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -305,8 +305,8 @@
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File app/controllers/talks_controller.rb, line 17</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
-  <span class="ruby-ivar">@topic</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:topic_id</span>])
-  <span class="ruby-ivar">@talk</span> = <span class="ruby-constant">Talk</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:topic_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:topic_id</span>])
+  <span class="ruby-ivar">@category</span> = <span class="ruby-constant">Category</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:category_id</span>])
+  <span class="ruby-ivar">@talk</span> = <span class="ruby-constant">Talk</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:category_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:category_id</span>])
   <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
@@ -344,7 +344,7 @@
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@talk</span> = <span class="ruby-constant">Talk</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
   <span class="ruby-ivar">@posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">where</span>(<span class="ruby-value">:talk_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@talk</span>.<span class="ruby-identifier">id</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">'updated_at'</span>)
-  <span class="ruby-ivar">@current_topic</span> = <span class="ruby-ivar">@talk</span>.<span class="ruby-identifier">topic</span>
+  <span class="ruby-ivar">@current_category</span> = <span class="ruby-ivar">@talk</span>.<span class="ruby-identifier">category</span>
 
   <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
     <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span> <span class="ruby-comment"># show.html.erb</span>

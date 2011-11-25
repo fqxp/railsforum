@@ -86,7 +86,7 @@ de:
 
   talks:
     new:
-      title:            "Neue Unterhaltung in %{topic}"
+      title:            "Neue Unterhaltung in %{category}"
     show:
       answer:           "Anworten"
       submit_post:      "Antwort abschicken"
@@ -101,9 +101,9 @@ de:
         one:            "Ein Beitrag"
         other:          "%{count} Beiträge"
 
-  topics:
+  categories:
     show:
-      title:            "Thema: %{topic}"
+      title:            "Kategorie: %{category}"
       new_talk:         "Neue Unterhaltung beginnen"
 
   users:

@@ -1,6 +1,6 @@
 RELEASE MILESTONE 1
 ===================
-1. Topics/Talks/Posts
+1. Categories/Talks/Posts
   - [OK] create new talk
   - [OK] new post
   - edit own post
@@ -23,7 +23,7 @@ TODO:
 Iteration 1
 -----------
 1. [OK] data models
-2. rudimentary topic#show page
+2. rudimentary category#show page
   1. [OK] list of talks, sorted by last post time
   2. [OK] each talk: title, number of posts, last post time
   3. [OK] link to talk#show page

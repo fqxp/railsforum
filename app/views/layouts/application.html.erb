@@ -24,16 +24,16 @@
 	  </div>
     <div id="main">
     	<div id="sidebar">
-        <ul class="topics">
+        <ul class="categories">
           <% if session[:user_id] %>
             <li>
               <%= link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '') %>
             </li>
-            <% @topics.each do |topic| %>
+            <% @categories.each do |category| %>
               <li>
-                <%= link_to topic, :class => ((defined?(@current_topic) && topic.id == @current_topic.id) ? 'current' : '') do %>
-                      <%= topic.name %>
-                      <span class="count"><%= topic.talks.count %></span>
+                <%= link_to category, :class => ((defined?(@current_category) && category.id == @current_category.id) ? 'current' : '') do %>
+                      <%= category.name %>
+                      <span class="count"><%= category.talks.count %></span>
                 <% end %>
               </li>
             <% end %>

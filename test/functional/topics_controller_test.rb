@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class TopicsControllerTest < ActionController::TestCase
+class CategoriesControllerTest < ActionController::TestCase
   setup do
-    @topic = topics(:one)
+    @category = categories(:one)
   end
 
   test "should get new" do
@@ -10,34 +10,34 @@ class TopicsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create topic" do
-    assert_difference('Topic.count') do
-      post :create, topic: @topic.attributes
+  test "should create category" do
+    assert_difference('Category.count') do
+      post :create, category: @category.attributes
     end
 
-    assert_redirected_to topic_path(assigns(:topic))
+    assert_redirected_to category_path(assigns(:category))
   end
 
-  test "should show topic" do
-    get :show, id: @topic.to_param
+  test "should show category" do
+    get :show, id: @category.to_param
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @topic.to_param
+    get :edit, id: @category.to_param
     assert_response :success
   end
 
-  test "should update topic" do
-    put :update, id: @topic.to_param, topic: @topic.attributes
-    assert_redirected_to topic_path(assigns(:topic))
+  test "should update category" do
+    put :update, id: @category.to_param, category: @category.attributes
+    assert_redirected_to category_path(assigns(:category))
   end
 
-  test "should destroy topic" do
-    assert_difference('Topic.count', -1) do
-      delete :destroy, id: @topic.to_param
+  test "should destroy category" do
+    assert_difference('Category.count', -1) do
+      delete :destroy, id: @category.to_param
     end
 
-    assert_redirected_to topics_path
+    assert_redirected_to categories_path
   end
 end

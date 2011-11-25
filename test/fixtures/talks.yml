@@ -2,10 +2,10 @@
 
 one:
   title: MyString
-  topic: :one
+  category: :one
   user: :one
 
 two:
   title: MyString
-  topic: :two
+  category: :two
   user: :two

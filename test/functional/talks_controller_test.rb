@@ -7,7 +7,7 @@ class TalksControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
-    get :new, { :topic_id => topics(:one).id }
+    get :new, { :category_id => categories(:one).id }
     assert_response :success
   end
 

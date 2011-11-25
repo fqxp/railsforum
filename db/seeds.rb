@@ -8,7 +8,7 @@
 
 Post.delete_all
 Talk.delete_all
-Topic.delete_all
+Category.delete_all
 User.delete_all
 
 SALT = 'NaCl'
@@ -21,33 +21,33 @@ user = User.create(
   :is_admin => false,
 )
 
-topics = []
-topics << Topic.create(
+categories = []
+categories << Category.create(
   :name => 'Kung Fu',
   :description => %{
     Alles, was mit Kung Fu- und Sanda zu tun hat.
   }
 )
 
-topics << Topic.create(
+categories << Category.create(
   :name => 'Yoga',
   :description => %{
     Yogis unterhalten sich hier.
   }
 )
 
-topics << Topic.create(
+categories << Category.create(
   :name => 'Street Talk',
   :description => %{
     Was nirgendwo anders reinpasst, kann hier besprochen werden.
   }
 )
 
-topics.each do |topic|
+categories.each do |category|
   50.times do |i|
     talk = Talk.create(
       :title => "Talk #{i}",
-      :topic_id => topic.id,
+      :category_id => category.id,
       :user => user
     )
     

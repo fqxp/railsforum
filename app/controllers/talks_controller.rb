@@ -4,7 +4,7 @@ class TalksController < ApplicationController
   def show
     @talk = Talk.find(params[:id])
     @posts = Post.where(:talk_id => @talk.id).order('updated_at')
-    @current_topic = @talk.topic
+    @current_category = @talk.category
     @post = Post.new(:talk => @talk)
 
     respond_to do |format|
@@ -16,8 +16,8 @@ class TalksController < ApplicationController
   # GET /talks/new
   # GET /talks/new.json
   def new
-    @topic = Topic.find(params[:topic_id])
-    @talk = Talk.new(:topic_id => params[:topic_id])
+    @category = Category.find(params[:category_id])
+    @talk = Talk.new(:category_id => params[:category_id])
     @post = Post.new
 
     respond_to do |format|
@@ -37,7 +37,7 @@ class TalksController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @talk = Talk.new(params[:talk])
-    @topic = Topic.find(@talk.topic_id)
+    @category = Category.find(@talk.category_id)
     user = User.find(session[:user_id])
     @post.user = @talk.user = user
     

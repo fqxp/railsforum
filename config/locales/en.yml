@@ -63,7 +63,7 @@ en:
 
   talks:
     new:
-      title:          "New talk in %{topic}"
+      title:          "New talk in %{category}"
     show:
       answer:         "Answer"
       submit_post:    "Submit answer"
@@ -78,9 +78,9 @@ en:
         one:          "One post"
         other:        "%{count} posts"
 
-  topics:
+  categories:
     show:
-      title:          "Topic: %{topic}"
+      title:          "Category: %{category}"
       new_talk:       "Begin new talk"
 
   users:
