@@ -8,3 +8,4 @@ tmp/
 *.pyo
 .project
 public/system/avatars
+custom
