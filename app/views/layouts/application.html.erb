@@ -16,30 +16,41 @@
     <div id="header">
       <div class="navigation">
         <% if session[:user_id] %>
-  	      <%= link_to t('.settings'), edit_user_path(session[:user_id]) %>
-  	      <%= link_to t('.invite'), invite_path %>
+  	      <%= link_to @current_user.username, edit_user_path(session[:user_id]) %>
   	      <%= link_to t('.log_out'), logout_path %>
         <% end %>
        </div>
 	  </div>
     <div id="main">
     	<div id="sidebar">
-        <ul class="categories">
-          <% if session[:user_id] %>
-            <li>
-              <%= link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '') %>
-            </li>
-            <% @categories.each do |category| %>
+        <% if session[:user_id] %>
+      	  <div class="panel">
+      	    <h2><%= t('.categories') %></h2>
+            <ul>
               <li>
-                <%= link_to category, :class => ((defined?(@current_category) && category.id == @current_category.id) ? 'current' : '') do %>
-                      <%= category.name %>
-                      <span class="count"><%= category.talks.count %></span>
-                <% end %>
+                <%= link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '') %>
               </li>
-            <% end %>
-            <%= yield :navigation %>
-          <% end %>
-        </ul>
+              <% @categories.each do |category| %>
+                <li>
+                  <%= link_to category, :class => ((defined?(@current_category) && category.id == @current_category.id) ? 'current' : '') do %>
+                        <%= category.name %>
+                        <span class="count"><%= category.talks.count %></span>
+                  <% end %>
+                </li>
+              <% end %>
+              <%= yield :navigation %>
+            </ul>
+          </div>
+          
+          <div class="panel">
+            <h2><%= t('.functions') %></h2>
+            <ul>
+              <li>
+                <%= link_to t('.invite'), invite_path %>
+              </li>
+            </ul>
+          </div>
+        <% end %>
     	</div>
     	<div id="content">
     	  <div class="content-inner">

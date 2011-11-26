@@ -62,9 +62,11 @@ de:
     application:
       forum_title:      "Rails-Forum"
       settings:         "Einstellungen"
-      invite:           "Einladen"
+      invite:           "Neue User_innen einladen"
       log_out:          "Abmelden"
       start_page:       "Überblick"
+      categories:       "Kategorien"
+      functions:        "Funktionen"
 
   overview:
     index:

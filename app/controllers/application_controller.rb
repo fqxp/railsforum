@@ -2,18 +2,24 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   before_filter :authorize
   before_filter :populate_categories
+  before_filter :set_current_user
   before_filter :set_locale_from_user
   
-  def populate_categories
-    @categories = Category.all
-  end
-
   protected
+    def populate_categories
+      @categories = Category.all
+    end
+    
+    def set_current_user
+      if session[:user_id]
+        @current_user = User.find(session[:user_id])
+      end
+    end
+
     def set_locale_from_user
       if session[:user_id]
         begin
-          user = User.find(session[:user_id])
-          I18n.locale = user.language
+          I18n.locale = @current_user.language
         rescue ActiveRecord::RecordNotFound
           I18n.locale = I18n.default_locale
         end

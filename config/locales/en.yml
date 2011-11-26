@@ -39,9 +39,11 @@ en:
     application:
       forum_title:    "Rails forum"
       settings:       "Settings"
-      invite:         "Invite"
+      invite:         "Invite new users"
       log_out:        "Log out"
       start_page:     "Overview"
+      categories:     "Categories"
+      functions:      "Functions"
 
   overview:
     index:

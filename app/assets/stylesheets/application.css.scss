@@ -17,7 +17,7 @@ $base-color-dark: darken($base-color, 30%);
 
 body {
   background-color: gray;
-  font-family: Verdana,Arial,sans-serif;
+  font-family: 'lucida grande','Lucida Sans Unicode',tahoma,sans-serif;
   font-size: 1em;
 }
 
@@ -116,44 +116,55 @@ fieldset {
 }
 
 #sidebar {
-  background-color: $base-color-light;
   width: $sidebar-width;
   float: right;
-  margin: 60px 8px 0 0;
-  padding: 4px 6px 12px;
-  border-radius: 4px;
   font-size: 80%;
+  margin: 60px 8px 0 0;
 
-  ul {
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    list-style-type: none;
-    border-bottom: 1px solid black;
-    text-decoration: none;
-    float: left;
-    >* {
-      display: block;
-      width: $sidebar-width - 2 * 8px;
-      padding: 6px 8px;
+  .panel {
+    float: right;
+    margin-top: 8px;
+    padding: 4px 6px 12px;
+    border-radius: 4px;
+    background-color: $base-color-light;
+    h2 {
       color: $base-color-dark;
+      font-size: 1em;
+      font-weight: bold;
+      margin: 2px 0 4px;
+      padding: 0 8px;
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+    li {
+      list-style-type: none;
+      border-bottom: 1px solid black;
       text-decoration: none;
       float: left;
-      .count {
-        font-size: 80%;
-        color: white;
-        background-color: #999999;
-        padding: 2px 6px;
-        border-radius: 12px;
-        float: right;
+      >* {
+        display: block;
+        width: $sidebar-width - 2 * 8px;
+        padding: 6px 8px;
+        color: $base-color-dark;
+        text-decoration: none;
+        float: left;
+        .count {
+          font-size: 80%;
+          color: white;
+          background-color: #999999;
+          padding: 2px 6px;
+          border-radius: 12px;
+          float: right;
+        }
       }
-    }
-    a:hover { 
-      background-color: #aaaaaa !important; 
-    }
-    a.current {
-      background-color: white;
+      a:hover { 
+        background-color: #aaaaaa !important; 
+      }
+      a.current {
+        background-color: white;
+      }
     }
   }
 }
