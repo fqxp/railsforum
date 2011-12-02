@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  talk_id: 1
+  user_id: 1
+  last_visited: 2011-11-26 18:22:32
+
+two:
+  talk_id: 1
+  user_id: 1
+  last_visited: 2011-11-26 18:22:32

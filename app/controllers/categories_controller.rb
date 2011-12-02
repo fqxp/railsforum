@@ -13,10 +13,9 @@ class CategoriesController < ApplicationController
   # GET /categories/1
   # GET /categories/1.json
   def show
-    @category = Category.find(params[:id])
-    @talks = Talk.where(:category_id => params[:id]).includes(:posts).order('posts.updated_at DESC')
-    @current_category = @category
-
+    @current_category = @category = Category.find(params[:id])
+    @talks = Talk.talks_with_user_specific_info(session[:user_id], @category.id)
+    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @category }

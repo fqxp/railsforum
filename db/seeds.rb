@@ -7,18 +7,39 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Post.delete_all
+TalkVisit.delete_all
 Talk.delete_all
 Category.delete_all
 User.delete_all
 
 SALT = 'NaCl'
-user = User.create(
+users = []
+users << User.create(
   :username => 'frank',
   :realname => 'Frank',
   :password => 'hallo123',
   :language => 'de',
   :email_address => 'frank@localhost',
   :is_admin => false,
+  :avatar => File.open('public/images/avatar-default.png')
+)
+users << User.create(
+  :username => 'testuser1',
+  :realname => 'Test User 1',
+  :password => 'hallo123',
+  :language => 'de',
+  :email_address => 'frank@localhost',
+  :is_admin => false,
+  :avatar => File.open('public/images/avatar-default.png')
+)
+users << User.create(
+  :username => 'testuser2',
+  :realname => 'Test User 2',
+  :password => 'hallo123',
+  :language => 'de',
+  :email_address => 'frank@localhost',
+  :is_admin => false,
+  :avatar => File.open('public/images/avatar-default.png')
 )
 
 categories = []
@@ -48,7 +69,7 @@ categories.each do |category|
     talk = Talk.create(
       :title => "Talk #{i}",
       :category_id => category.id,
-      :user => user
+      :user => users[rand 3]
     )
     
     20.times do |j|
@@ -59,11 +80,8 @@ categories.each do |category|
           :updated_at => DateTime.new(2011, 11, 8-rand(7).abs, 
             rand(24).abs, rand(60).abs, rand(60).abs),
           :talk_id => talk.id,
-          :user => user
+          :user => users[rand 3]
         )
-#      rescue Exception => e
-#        puts "Exception #{e}"
-#e        puts "Date: #{h}:#{m}:#{s}"
       end
     end
   end

@@ -35,6 +35,8 @@ class PostsController < ApplicationController
     user = User.find(session[:user_id])
     @post.user = user
 
+    TalkVisit.mark_visited(@talk.id, user.id)   
+
     respond_to do |format|
       if @post.save
         flash[:current_post_id] = @post.id

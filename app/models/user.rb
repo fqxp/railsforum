@@ -16,6 +16,7 @@ class User < ActiveRecord::Base
   has_many :talks
   has_many :posts
   has_many :invitations
+  has_many :talk_visits
   
   attr_accessor :password_confirmation
   attr_reader :password

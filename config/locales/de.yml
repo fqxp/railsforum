@@ -17,8 +17,8 @@ de:
         other:          "vor ungefähr %{count} Minuten"
   time:
     formats:
-      date_without_year: "%A, %e. %B"
-      date:             "%A, %e. %B %Y"
+      date_without_year: "%a., %e. %b."
+      date:             "%a., %e. %b. %Y"
 
   activerecord:
     errors:
@@ -98,6 +98,9 @@ de:
     talk:
       in:               "in"
       latest_post_by:   "Letzter Beitrag von"
+      unread_posts:   
+        one:            "1 Neuer"
+        other:          "%{count} Neue"
       by:               "von"
       messages:
         one:            "Ein Beitrag"

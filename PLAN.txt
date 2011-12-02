@@ -84,11 +84,12 @@ Iteration 8
 
 Iteration 9
 -----------
-1. Fix layout so far
+1. [OK] Fix layout so far
 
 Iteration 10
 ------------
-1. 
+1. [OK] "X new posts" display per talk on overview page
+2. "X new posts" on category page
 
 Iteration
 ---------

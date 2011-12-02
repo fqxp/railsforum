@@ -19,9 +19,13 @@
   .info {
     color: #aaaaaa;
     font-size: 80%;
-    line-height: 160%;
+    line-height: 170%;
     margin: 4px 6px;
     padding: 0;
+    span {
+      margin-right: 8px;
+      white-space: nowrap;
+    }
     .count-messages, .latest-post-by {
       a {
         color: black;
@@ -33,15 +37,25 @@
         color: #aaaaaa;
       }
     }
-    span {
-      margin-right: 8px;
+    .count-unread {
+      border: 1px solid black;
+      border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
+      color: white;
+      background-color: #0000cc;
+      padding: 1px 6px;
+      white-space: nowrap;
     }
     .category {
       border: 1px solid black;
       border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
       color: white;
       background-color: #aaaaaa;
       padding: 1px 6px;
+      white-space: nowrap;
       a {
         color: white;
       }
@@ -71,6 +85,8 @@
       line-height: 12px;
       border: 1px solid black;
       border-radius: 4px;
+      -moz-border-radius: 4px;
+      -webkit-border-radius: 4px;
       color: white;
       background-color: #aaaaaa;
       margin: 9px 6px;

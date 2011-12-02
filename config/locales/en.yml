@@ -20,8 +20,8 @@ en:
         other:          "about %{count} minutes ago"
   time:
     formats:
-      date_without_year: "%A, %B %e"
-      date:             "%A, %B %e, %Y"
+      date_without_year: "%a, %b %e"
+      date:             "%a, %b %e, %Y"
 
   activemodel:
     errors:
@@ -76,6 +76,9 @@ en:
       in:             "in"
       latest_post_at: "Latest post by"
       by:             "by"
+      unread_posts:   
+        one:          "One new"
+        other:        "%{count} new"
       messages:
         one:          "One post"
         other:        "%{count} posts"

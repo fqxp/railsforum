@@ -45,6 +45,8 @@ module Railsforum
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     
-    config.assets.paths << Rails.root.join("custom", "assets")
+    config.assets.paths << Rails.root.join("custom", "assets", "images")
+    config.assets.paths << Rails.root.join("custom", "assets", "javascripts")
+    config.assets.paths << Rails.root.join("custom", "assets", "stylesheets")
   end
 end

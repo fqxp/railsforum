@@ -3,7 +3,7 @@
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
- *= require_tree . 
+ *= require_tree .
  *= require_tree ../../../custom/assets/stylesheets
  *= require custom-theme/jquery-ui-1.8.16.custom.css
 */
@@ -35,10 +35,16 @@ a {
     padding: 2px 4px;
     border: 1px solid black;
     border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     &:hover {
       background-color: $base-color;
     }
   }
+}
+
+img {
+  border: 0px;
 }
 
 fieldset {
@@ -104,6 +110,8 @@ fieldset {
     margin: 7px 0 0 0;
     padding: 7px 6px;
     border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     border: 1px solid $base-color;
     .button {
       background-color: white;
@@ -119,13 +127,15 @@ fieldset {
   width: $sidebar-width;
   float: right;
   font-size: 80%;
-  margin: 60px 8px 0 0;
+  margin: 60px 8px 12px 0;
 
   .panel {
     float: right;
-    margin-top: 8px;
+    margin: 4px 0;
     padding: 4px 6px 12px;
     border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
     background-color: $base-color-light;
     h2 {
       color: $base-color-dark;
@@ -156,6 +166,8 @@ fieldset {
           background-color: #999999;
           padding: 2px 6px;
           border-radius: 12px;
+          -moz-border-radius: 12px;
+          -webkit-border-radius: 12px;
           float: right;
         }
       }

@@ -6,6 +6,8 @@ class TalksController < ApplicationController
     @posts = Post.where(:talk_id => @talk.id).order('updated_at')
     @current_category = @talk.category
     @post = Post.new(:talk => @talk)
+ 
+    TalkVisit.mark_visited(@talk.id, @current_user.id)   
 
     respond_to do |format|
       format.html # show.html.erb
