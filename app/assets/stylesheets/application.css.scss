@@ -183,9 +183,52 @@ fieldset {
   background-color: white;
   margin-right: 250px;
   margin-bottom: 20px;
+  
+  .content-inner {
+    padding: 8px 12px;
+  }
+  
+  .pagination {
+    margin: 18px 0;
+    text-align: center;
+    &>span >a {
+      font-size: 12px;
+      padding: 0 4px;
+      margin: 0px 3px;
+      color: $base-color-dark;
+      background-color: $base-color-light;
+      border: 1px solid $base-color;
+      border-radius: 4px;
+    }
+    .page {
+      a, &.gap, &.current {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 2px;
+        padding: 2px 5px;
+      }
+      a {
+        padding: 2px 9px;
+        color: $base-color-dark;
+        background-color: $base-color-light;
+        border: 1px solid $base-color;
+        border-radius: 50%;
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
 }
 
-.content-inner
-{
-  padding: 8px 12px;
+#notice {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-weight: bold;
+  padding: 6px 40px;
+  border-radius: 0 0 14px 14px;
+  background-color: #C6301C;
+  z-index: 999;
 }

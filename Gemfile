@@ -9,7 +9,10 @@ gem 'rails-i18n'
 gem 'sqlite3'
 gem 'basic_active_model'
 
+# File uploading
 gem "paperclip", "~> 2.4"
+# Pagination
+gem "kaminari"
 
 # Gems used only for assets and not required
 # in production environments by default.

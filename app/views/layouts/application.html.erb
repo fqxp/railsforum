@@ -6,6 +6,10 @@
   <%= javascript_include_tag "application" %>
   <script>
     $(document).ready(function() {
+      if ($('#notice').text()) {
+        $('#notice').fadeIn().delay(3000).fadeOut('slow');
+      }
+      
       <%= yield :jquery_script %>
     })
   </script>
@@ -13,6 +17,10 @@
 </head>
 <body>
 	<div id="container">
+	  <% if notice.present? %>
+      <div id="notice" style="display:none"><%= notice -%></div>
+    <% end %>
+
     <div id="header">
       <div class="navigation">
         <% if session[:user_id] %>

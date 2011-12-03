@@ -15,7 +15,7 @@ class Talk < ActiveRecord::Base
   # * count_posts
   # * latest_post_at
   # * count_unread_posts
-  def self.talks_with_user_specific_info(current_user_id, category_id=nil, limit=25)
+  def self.talks_with_user_specific_info(current_user_id, page=nil, category_id=nil)
     talks = self
     talks = talks.where(:category_id => category_id) unless category_id.nil?
     talks = talks \
@@ -25,18 +25,19 @@ class Talk < ActiveRecord::Base
       .joins("LEFT JOIN talk_visits ON talk_visits.talk_id=talks.id AND talk_visits.user_id=#{current_user_id}")
       .group('posts.talk_id') \
       .order('latest_post_at_s DESC') \
-      .limit(limit)
+      .page(page)
       
     talks.each do |talk|
       talk.latest_post_at = DateTime.parse(talk['latest_post_at_s'])
       talk.add_count_unread_posts! current_user_id
     end
+    
     talks
   end
 
   def add_count_unread_posts!(current_user_id)
     talk_visit = talk_visits.find_by_user_id(current_user_id)
-    self.count_unread_posts = talk_visit.nil? ? Post.where(:talk_id => id).count : Post.where(:talk_id => id) \
+    self.count_unread_posts = talk_visit.nil? ? 0 : Post.where(:talk_id => id) \
       .where('updated_at > ?', talk_visit.last_visited).count
   end
 end

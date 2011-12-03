@@ -50,6 +50,8 @@ GEM
       railties (~> 3.0)
       thor (~> 0.14)
     json (1.6.1)
+    kaminari (0.12.4)
+      rails (>= 3.0.0)
     mail (2.3.0)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
@@ -123,6 +125,7 @@ DEPENDENCIES
   basic_active_model
   coffee-rails (~> 3.1.1)
   jquery-rails
+  kaminari
   minitest
   paperclip (~> 2.4)
   rails (= 3.1.1)

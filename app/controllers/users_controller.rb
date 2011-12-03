@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to root_url, notice: ".settings_saved" }
+        format.html { redirect_to root_url, notice: I18n.t('.settings_saved') }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

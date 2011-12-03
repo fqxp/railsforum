@@ -3,10 +3,10 @@
   <%= link_to t('.new_talk'), new_talk_path(:category_id => @category.id), :class => 'button' %>
 </h1>
 
-<div id="notice"><%= notice %></div>
-
 <% @talks.each do |talk| %>
   <%= render talk %>
 <% end %>
 
 <%= link_to t('.new_talk'), new_talk_path(:category_id => @category.id), :class => 'button' %>
+
+<%= paginate @talks %>

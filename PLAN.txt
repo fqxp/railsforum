@@ -94,13 +94,18 @@ Iteration 10
 Iteration 11
 ------------
 1. [OK] Show user info page with mailto: link
-2. Pagination for overview
-3. Pagination for category show
+2. [OK] Pagination for overview
+3. [OK] Pagination for category show
+4. [OK] Show notice at page top, disappearing after a few seconds
 
 Iteration 12
 ------------
 1. BBCode editor
 2. BBCode view
+
+Iteration 13
+------------
+1. Admin interface (e.g. with https://github.com/sferik/rails_admin ?)
 
 Iteration
 ---------

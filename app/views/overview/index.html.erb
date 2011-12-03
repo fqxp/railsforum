@@ -2,10 +2,9 @@
 <% end %>
 
 <h1><%= t('.title') %></h1>
-<% if notice %>
-  <p id="notice"><%= notice %>
-<% end %>
 
 <% @current_talks.each do |talk| %>
   <%= render talk %>
 <% end %>
+
+<%= paginate @current_talks %>

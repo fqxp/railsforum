@@ -5,6 +5,7 @@ de:
   talk_success_msg:     "Unterhaltung wurde begonnen"
   password_missing_msg: "fehlt"
   invited_users_msg:    "Einladungen an %{email_addresses} wurden verschickt."
+  settings_saved:       "Einstellungen gespeichert"
 
   date:
     extra:
@@ -67,6 +68,14 @@ de:
       start_page:       "Überblick"
       categories:       "Kategorien"
       functions:        "Funktionen"
+
+  views:
+    pagination:
+      first:            "letzte"
+      previous:         "neuere"
+      next:             "ältere"
+      last:             "erste"
+      truncate:         "..."
 
   overview:
     index:

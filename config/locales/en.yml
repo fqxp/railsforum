@@ -9,6 +9,7 @@ en:
   talk_success_msg:   "Talk was successfully created"
   password_missing_msg: "Password is missing"
   invited_users_msg:  "Invitations were sent to %{email_addresses}"
+  settings_saved:     "Saved settings"
 
   date:
     extra:
@@ -44,6 +45,14 @@ en:
       start_page:     "Overview"
       categories:     "Categories"
       functions:      "Functions"
+
+  views:
+    pagination:
+      first:            "last"
+      previous:         "newer"
+      next:             "older"
+      last:             "first"
+      truncate:         "..."
 
   overview:
     index:

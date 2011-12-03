@@ -14,7 +14,7 @@ class CategoriesController < ApplicationController
   # GET /categories/1.json
   def show
     @current_category = @category = Category.find(params[:id])
-    @talks = Talk.talks_with_user_specific_info(session[:user_id], @category.id)
+    @talks = Talk.talks_with_user_specific_info(session[:user_id], params[:page], @category.id)
     
     respond_to do |format|
       format.html # show.html.erb
