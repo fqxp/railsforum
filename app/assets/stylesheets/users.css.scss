@@ -1,3 +1,24 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "variables";
+
+.user {
+  .avatar {
+    float: left;
+    border: 1px solid $base-color;
+    padding: 2px;
+    margin-right: 20px;
+    box-shadow: 2px 2px 10px $base-color;
+  }
+  
+  .user-field {
+    font-size: 90%;
+    margin-bottom: 6px;
+    
+    .field {
+      font-weight: bold;
+    }
+  }
+}

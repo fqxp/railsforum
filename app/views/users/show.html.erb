@@ -1,21 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <%= image_tag @user.avatar.url(:medium) %>
-  <b>Username:</b>
-  <%= @user.username %>
-</p>
+<div class="user">
+  <div class="avatar">
+    <%= image_tag @user.avatar.url(:medium) %>
+  </div>
 
-<p>
-  <b>Realname:</b>
-  <%= @user.realname %>
-</p>
-
-<p>
-  <b>Email address:</b>
-  <%= @user.email_address %>
-</p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class="user-field">
+    <span class="label">Username:</span>
+    <span class="field"><%= @user.username %></span>
+  </div>
+  
+  <div class="user-field">
+    <span class="label">Realname:</label>
+    <span class="field"><%= @user.realname %></span>
+  </div>
+  
+  <div class="user-field">
+    <span class="label">Email address:</span>
+    <span class="field"><%= mail_to @user.email_address %></span>
+  </div>
+</div>
