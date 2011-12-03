@@ -64,6 +64,16 @@ categories << Category.create(
   }
 )
 
+
+filler_text =<<EOF
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
+invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
+accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
+sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing 
+elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita 
+kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+EOF
 categories.each do |category|
   50.times do |i|
     talk = Talk.create(
@@ -75,7 +85,7 @@ categories.each do |category|
     20.times do |j|
       begin
         Post.create(
-          :text => "Was ich noch sagen wollte usw. #{i}/#{j}",
+          :text => filler_text[0, rand(filler_text.length)],
           :created_at => DateTime.new(2011, 11, 7, 0),
           :updated_at => DateTime.new(2011, 11, 8-rand(7).abs, 
             rand(24).abs, rand(60).abs, rand(60).abs),
