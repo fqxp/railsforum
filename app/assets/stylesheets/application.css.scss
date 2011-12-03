@@ -4,7 +4,7 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree .
- *= require_tree ../../../custom/assets/stylesheets
+ *= require wusheng.css
  *= require custom-theme/jquery-ui-1.8.16.custom.css
 */
 
@@ -79,7 +79,7 @@ fieldset {
   min-width: $min-width;
   height: 120px;
   margin: auto; /* this centers the div */
-  background-color: #000000;
+  background-color: $base-color-dark;
   position: relative;
   font-size: 80%;
   
