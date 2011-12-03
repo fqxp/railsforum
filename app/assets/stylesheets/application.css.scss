@@ -51,7 +51,7 @@ fieldset {
   padding: 6px 12px;
   border: 1px solid $base-color;
   .field {
-    margin-bottom: 12px;
+    margin-bottom: 25px;
     label {
       font-size: 90%;
       font-weight: bold;
@@ -60,12 +60,10 @@ fieldset {
     input {
       font-size: 140%;
     }
-    input[type=file] {
-      font-size: 100%;
-    }
   }
   .actions {
     text-align: right;
+    clear: left;
   }
 }
 

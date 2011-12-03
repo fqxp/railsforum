@@ -1,3 +1,11 @@
+<% content_for :jquery_script do %>
+  $('#user_avatar')
+    .stylize_file_input('Choose avatar')
+    .change(function(ev) {
+      $('img.avatar').css('opacity', 0.3);
+    });
+<% end %>
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -23,9 +31,8 @@
     <%= f.label :realname %>
     <%= f.text_field :realname %>
   </div>
+  <%= image_tag @user.avatar.url(:thumb), :class => 'avatar' %>
   <div class="field">
-    <%= image_tag @user.avatar.url(:thumb) %>
-    <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div>
   <% if @user.new_record? %>
