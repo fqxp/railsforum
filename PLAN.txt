@@ -89,7 +89,18 @@ Iteration 9
 Iteration 10
 ------------
 1. [OK] "X new posts" display per talk on overview page
-2. "X new posts" on category page
+2. [OK] "X new posts" on category page
+
+Iteration 11
+------------
+1. [OK] Show user info page with mailto: link
+2. Pagination for overview
+3. Pagination for category show
+
+Iteration 12
+------------
+1. BBCode editor
+2. BBCode view
 
 Iteration
 ---------

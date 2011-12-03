@@ -8,12 +8,10 @@
  *= require custom-theme/jquery-ui-1.8.16.custom.css
 */
 
+@import "variables";
 $max-width: 900px;
 $min-width: 475px;
 $sidebar-width: 230px;
-$base-color: #999999;
-$base-color-light: lighten($base-color, 30%);
-$base-color-dark: darken($base-color, 30%);
 
 body {
   background-color: gray;
@@ -98,7 +96,7 @@ fieldset {
   max-width: 900px;
   width: 90%;
   min-width: 475px;
-  min-height: 300px;
+  min-height: 400px;
   clear: left;
   background-color: white;
   
