@@ -1,5 +1,6 @@
 <% content_for :jquery_script do %>
-  $('form').enable_submit_if_possible('input#talk_title, textarea#post_text');
+  $('form').enable_submit_if_possible('input#username, input#password');
+  $('input#username').focus();
 <% end %>
 
 <% if flash[:alert] %>
