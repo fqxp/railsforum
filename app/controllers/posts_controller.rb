@@ -24,7 +24,9 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
+    with_owner_only(Post.find(params[:id])) do |post|
+      @post = post
+    end
   end
 
   # POST /posts
@@ -52,16 +54,18 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.json
   def update
-    @post = Post.find(params[:id])
+    with_owner_only(Post.find(params[:id])) do |post|
+      @post = post
 
-    respond_to do |format|
-      if @post.update_attributes(params[:post])
-        format.html { redirect_to talk_path(@post.talk), notice: 'Post was successfully updated.',
-                      :anchor => 'current' }
-        format.json { head :ok }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @post.update_attributes(params[:post])
+          format.html { redirect_to talk_path(@post.talk), notice: 'Post was successfully updated.',
+                        :anchor => 'current' }
+          format.json { head :ok }
+        else
+          format.html { render action: "edit" }
+          format.json { render json: @post.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -69,12 +73,13 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.json
   def destroy
-    @post = Post.find(params[:id])
-    @post.destroy
-
-    respond_to do |format|
-      format.html { redirect_to posts_url }
-      format.json { head :ok }
+    with_owner_only(Post.find(params[:id])) do |post|
+      post.destroy
+  
+      respond_to do |format|
+        format.html { redirect_to posts_url }
+        format.json { head :ok }
+      end
     end
   end
 end

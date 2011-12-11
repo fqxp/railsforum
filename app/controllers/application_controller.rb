@@ -36,8 +36,21 @@ class ApplicationController < ActionController::Base
   private
     def authorize
       unless User.find_by_id(session[:user_id])
-        redirect_to login_url, :notice => "Please log in"
+        respond_to do |format|
+          format.html { redirect_to login_url, :notice => I18n.t('.please_log_in') }
+          format.json { head :forbidden }
+        end
       end
     end
 
+    def with_owner_only(document)
+      if document.user.id == session[:user_id]
+        yield document
+      else
+        respond_to do |format|
+          format.html { redirect_to login_url, :notice => I18n.t('.please_log_in') }
+          format.json { head :forbidden }
+        end
+      end
+    end
 end
