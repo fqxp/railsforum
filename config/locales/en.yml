@@ -62,11 +62,9 @@ en:
   posts:
     edit:
       title:          "Edit post"
-    new:
-      title:          "New post"
+      submit:         "Save post"
     form:
       text:           "Post text"
-      submit:         "Send post"
       
   sessions:
     new:

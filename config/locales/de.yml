@@ -85,11 +85,9 @@ de:
   posts:
     edit:
       title:            "Beitrag bearbeiten"
-    new:
-      title:            "Neuer Beitrag"
+      submit:           "Beitrag abschicken"
     form:
       text:             "Text des Beitrags"
-      submit:           "Beitrag abschicken"
 
   sessions:
     new:
