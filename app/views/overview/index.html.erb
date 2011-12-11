@@ -3,8 +3,8 @@
 
 <h1><%= t('.title') %></h1>
 
-<% @current_talks.each do |talk| %>
-  <%= render talk %>
-<% end %>
+<%= render(:partial => :talk, :collection => @current_talks) || render('no_talks') %>
 
 <%= paginate @current_talks %>
+
+<%= link_to t('.new_talk'), new_talk_path(:category_id => nil), :class => 'button' %>

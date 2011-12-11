@@ -106,11 +106,15 @@ Iteration 12
 
 Iteration 13
 ------------
-1. Edit existing posts
+1. [OK] Edit existing posts
+2. [OK] Show message and 'create talk' button when overview list is empty
 
 Iteration 14
 ------------
-1. Admin interface (e.g. with https://github.com/sferik/rails_admin ?)
+1. Admin interface: edit categories
+2. Admin interface: edit users
+3. Generic admin interface for all other stuff
+   (with https://github.com/sferik/rails_admin?)
 
 Iteration
 ---------
