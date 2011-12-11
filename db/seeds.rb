@@ -1,10 +1,7 @@
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+# This only sets up an admin account and a small number of categories.
 
 Post.delete_all
 TalkVisit.delete_all
@@ -15,84 +12,22 @@ User.delete_all
 SALT = 'NaCl'
 users = []
 users << User.create(
-  :username => 'frank',
-  :realname => 'Frank',
-  :password => 'hallo123',
-  :language => 'de',
-  :email_address => 'frank@localhost',
-  :is_admin => false,
-  :avatar => File.open('public/images/avatar-default.png')
-)
-users << User.create(
-  :username => 'testuser1',
-  :realname => 'Test User 1',
-  :password => 'hallo123',
-  :language => 'de',
-  :email_address => 'frank@localhost',
-  :is_admin => false,
-  :avatar => File.open('public/images/avatar-default.png')
-)
-users << User.create(
-  :username => 'testuser2',
-  :realname => 'Test User 2',
-  :password => 'hallo123',
-  :language => 'de',
-  :email_address => 'frank@localhost',
-  :is_admin => false,
+  :username => 'admin',
+  :realname => 'Administrator',
+  :password => 'verysecret!',
+  :language => 'en',
+  :email_address => 'root@localhost',
+  :is_admin => true,
   :avatar => File.open('public/images/avatar-default.png')
 )
 
 categories = []
-categories << Category.create(
-  :name => 'Kung Fu',
-  :description => %{
-    Alles, was mit Kung Fu- und Sanda zu tun hat.
-  }
-)
-
-categories << Category.create(
-  :name => 'Yoga',
-  :description => %{
-    Yogis unterhalten sich hier.
-  }
-)
-
-categories << Category.create(
-  :name => 'Street Talk',
-  :description => %{
-    Was nirgendwo anders reinpasst, kann hier besprochen werden.
-  }
-)
-
-
-filler_text =<<EOF
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor 
-invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et 
-accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
-sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing 
-elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita 
-kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
-EOF
-categories.each do |category|
-  50.times do |i|
-    talk = Talk.create(
-      :title => "Talk #{i}",
-      :category_id => category.id,
-      :user => users[rand 3]
-    )
-    
-    20.times do |j|
-      begin
-        Post.create(
-          :text => filler_text[0, rand(filler_text.length)],
-          :created_at => DateTime.new(2011, 11, 7, 0),
-          :updated_at => DateTime.new(2011, 11, 8-rand(7).abs, 
-            rand(24).abs, rand(60).abs, rand(60).abs),
-          :talk_id => talk.id,
-          :user => users[rand 3]
-        )
-      end
-    end
-  end
+5.times do |i|
+  category_number = i + 1
+  categories << Category.create(
+    :name => "Sample category #{category_number}",
+    :description => %{
+      Just a sample category (##{category_number}).
+    }
+  )
 end
