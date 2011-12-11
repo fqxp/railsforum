@@ -6,6 +6,7 @@ de:
   password_missing_msg: "fehlt"
   invited_users_msg:    "Einladungen an %{email_addresses} wurden verschickt."
   settings_saved:       "Einstellungen gespeichert"
+  please_log_in:        "Bitte anmelden"
 
   date:
     extra:

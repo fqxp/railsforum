@@ -101,8 +101,8 @@ Iteration 11
 Iteration 12
 ------------
 0. [OK] Style avatar upload button
-1. BBCode editor
-2. BBCode view
+1. [OK] BBCode editor
+2. [OK] BBCode view
 
 Iteration 13
 ------------

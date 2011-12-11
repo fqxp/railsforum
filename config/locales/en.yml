@@ -10,6 +10,7 @@ en:
   password_missing_msg: "Password is missing"
   invited_users_msg:  "Invitations were sent to %{email_addresses}"
   settings_saved:     "Saved settings"
+  please_log_in:      "Please log in"
 
   date:
     extra:

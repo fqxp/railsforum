@@ -83,7 +83,11 @@ fieldset {
     right: 12px;
     bottom: 6px;
     a {
+      color: white;
       margin-left: 12px;
+      &:hover {
+        color: $base-color-light;
+      }
     }
   }
 }
