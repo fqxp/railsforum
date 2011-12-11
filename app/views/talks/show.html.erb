@@ -1,5 +1,6 @@
 <% content_for :jquery_script do %>
   $('#new_post_form').enable_submit_if_possible('textarea#post_text');
+  $('#new_post_form textarea').rteditor();
 <% end %>
 
 <div class="talk-page">
@@ -18,6 +19,7 @@
       <div class="field">
         <%= f.label :text, t('.answer') %><br />
         <%= f.text_area :text, :size => '50x8' %>
+        <div id="coded_text" style="display:none"/>
       </div>
       <div class="actions">
         <%= f.submit t('.submit_post') %>

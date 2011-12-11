@@ -106,6 +106,10 @@ Iteration 12
 
 Iteration 13
 ------------
+1. Edit existing posts
+
+Iteration 14
+------------
 1. Admin interface (e.g. with https://github.com/sferik/rails_admin ?)
 
 Iteration

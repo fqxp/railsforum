@@ -22,6 +22,8 @@ Railsforum::Application.routes.draw do
     get 'register' => :registration
     post 'register' => :register
   end
+  
+  post 'preview' => "preview#bbcode"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

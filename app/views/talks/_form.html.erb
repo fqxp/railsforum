@@ -1,3 +1,8 @@
+<% content_for :jquery_script do %>
+  $('.new_talk_form').enable_submit_if_possible('textarea#post_text');
+  $('.new_talk_form textarea').rteditor();
+<% end %>
+
 <%= form_for @talk, :html => { :class => 'new_talk_form' } do |f| %>
   <% if @talk.errors.any? or @post.errors.any? %>
     <div id="error_explanation">

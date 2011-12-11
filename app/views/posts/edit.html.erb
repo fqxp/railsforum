@@ -1,3 +1,21 @@
 <h1>{%= t('.title') %}</h1>
 
-<%= render 'form' %>
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? or @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= t('error_msg', :count => @post.errors.count) %></h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= render :partial => 'posts/form', :locals => { :post => @post } %>
+
+  <div class="actions">
+    <%= f.submit t('.submit') %>
+  </div>
+<% end %>

@@ -11,9 +11,12 @@
     </div>
     <span class="meta-info">
       <span class="by-user"><%= link_to post.user.username, user_path(post.user) %></span>
-      <span class="updated-at"><%= human_time post.updated_at %></span>
+      <span class="created-at"><%= human_time post.created_at %></span>
     </span>
     <div class="content">
-      <%= post.text %>
+      <%= post.rendered_text %>
+    </div>
+    <div class="actions">
+      <%= link_to t('.edit'), edit_post_path(post.id) %>
     </div>
   </div>

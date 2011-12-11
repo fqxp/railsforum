@@ -9,3 +9,4 @@
 //= require jquery_ujs
 //= require_tree .
 //= require forum
+//= require tinymce-jquery

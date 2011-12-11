@@ -3,7 +3,7 @@ class TalksController < ApplicationController
   # GET /talks/1.json
   def show
     @talk = Talk.find(params[:id])
-    @posts = Post.where(:talk_id => @talk.id).order('updated_at')
+    @posts = Post.where(:talk_id => @talk.id).order('created_at')
     @current_category = @talk.category
     @post = Post.new(:talk => @talk)
  
