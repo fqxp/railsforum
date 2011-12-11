@@ -96,7 +96,8 @@ de:
 
   talks:
     new:
-      title:            "Neue Unterhaltung in %{category}"
+      title:            "Neue Unterhaltung"
+      title_with_category: "Neue Unterhaltung in %{category}"
     show:
       answer:           "Anworten"
       submit_post:      "Antwort abschicken"

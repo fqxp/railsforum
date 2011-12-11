@@ -73,7 +73,8 @@ en:
 
   talks:
     new:
-      title:          "New talk in %{category}"
+      title:          "New talk"
+      title_with_category: "New talk in %{category}"
     show:
       answer:         "Answer"
       submit_post:    "Submit answer"

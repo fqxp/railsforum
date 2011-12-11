@@ -2,7 +2,13 @@
   $('form').enable_submit_if_possible('input#talk_title, textarea#post_text');
 <% end %>
 
-<h1><%= t('.title', :category => @category.name) %></h1>
+<h1>
+<% if @category.nil? %>
+  <%= t('.title') %>
+<% else %>
+  <%= t('.title_with_category', :category => @category.name) %>
+<% end %>
+</h1>
 
 <fieldset>
   <%= render 'form' %>

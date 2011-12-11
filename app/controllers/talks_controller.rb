@@ -18,8 +18,11 @@ class TalksController < ApplicationController
   # GET /talks/new
   # GET /talks/new.json
   def new
-    @category = Category.find(params[:category_id])
-    @talk = Talk.new(:category_id => params[:category_id])
+    if params.has_key? :category_id
+      @talk = Talk.new(:category_id => params[:category_id])
+    else
+      @talk = Talk.new(:category_id => nil)
+    end
     @post = Post.new
 
     respond_to do |format|
@@ -39,7 +42,6 @@ class TalksController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @talk = Talk.new(params[:talk])
-    @category = Category.find(@talk.category_id)
     user = User.find(session[:user_id])
     @post.user = @talk.user = user
     
