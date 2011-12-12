@@ -7,3 +7,4 @@ Features:
 * log in, log out, invite users
 * edit user settings, including avatar upload
 
+more to come in this place ...

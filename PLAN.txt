@@ -3,13 +3,13 @@ RELEASE MILESTONE 1
 1. Categories/Talks/Posts
   - [OK] create new talk
   - [OK] new post
-  - edit own post
+  - [OK] edit own post
   - cite post
-  - HTML posts (wysiwyg editor)
-  - nicely layouted views
+  - [OK] HTML posts (wysiwyg editor)
+  - [OK] nicely layouted views
 2. User authentication/authorization
-  - invite new users (for normal users)
-  - edit own user
+  - [OK] invite new users (for normal users)
+  - [OK] edit own user settings
 3. Admin area
   - admin user editor: create, delete, edit
   - mark admin user
