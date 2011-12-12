@@ -1,3 +1,8 @@
+<% content_for :jquery_script do %>
+  $('.edit_post').enable_submit_if_possible('textarea#post_text');
+  $('.edit_post textarea').rteditor();
+<% end %>
+
 <h1><%= t('.title') %></h1>
 
 <%= form_for(@post) do |f| %>

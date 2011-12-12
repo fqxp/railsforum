@@ -1,5 +1,6 @@
 <% content_for :jquery_script do %>
-  $('form').enable_submit_if_possible('input#talk_title, textarea#post_text');
+  $('#new_talk_form').enable_submit_if_possible('input#talk_title,textarea#post_text');
+  $('#new_talk_form textarea').rteditor();
 <% end %>
 
 <h1>

@@ -12,11 +12,11 @@
     <span class="meta-info">
       <span class="by-user"><%= link_to post.user.username, user_path(post.user) %></span>
       <span class="created-at"><%= human_time post.created_at %></span>
+      <% if session[:user_id] == post.user_id %>
+        <%= link_to t('.edit'), edit_post_path(post.id) %>
+      <% end %>
     </span>
     <div class="content">
       <%= post.rendered_text %>
-    </div>
-    <div class="actions">
-      <%= link_to t('.edit'), edit_post_path(post.id) %>
     </div>
   </div>

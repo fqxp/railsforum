@@ -16,13 +16,16 @@
     text-align: center;
   }
   .meta-info {
+    font-size: 10px;
+    >* {
+      padding-right: 1em;
+    }
     .by-user a {
+      font-size: 14px;
       color: black;
       font-weight: bold;
     }
     .created-at {
-      font-size: 75%;
-      padding-right: 1em;
     }
   }
   .content {
