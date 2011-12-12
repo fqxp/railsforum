@@ -21,6 +21,7 @@ de:
     formats:
       date_without_year: "%a., %e. %b."
       date:             "%a., %e. %b. %Y"
+      time:             "%H:%M"
 
   activerecord:
     errors:

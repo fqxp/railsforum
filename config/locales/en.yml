@@ -24,6 +24,7 @@ en:
     formats:
       date_without_year: "%a, %b %e"
       date:             "%a, %b %e, %Y"
+      time:             "%H:%M"
 
   activemodel:
     errors:
