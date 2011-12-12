@@ -108,6 +108,7 @@ Iteration 13
 ------------
 1. [OK] Edit existing posts
 2. [OK] Show message and 'create talk' button when overview list is empty
+3. [OK] Let user choose language
 
 Iteration 14
 ------------

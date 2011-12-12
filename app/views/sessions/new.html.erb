@@ -11,11 +11,11 @@
 <fieldset>
   <%= form_tag do %>
     <div class="field">
-      <%= label_tag :username %>
+      <%= label_tag :username, t('.username') %>
       <%= text_field_tag :username, params[:username] %>
     </div>
     <div class="field">
-      <%= label_tag :password %>
+      <%= label_tag :password, t('.password') %>
       <%= password_field_tag :password, params[:password] %>
     </div>
     

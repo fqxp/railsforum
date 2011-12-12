@@ -10,12 +10,12 @@ class SessionsController < ApplicationController
       redirect_to overview_index_url
     else
       session.delete :user_id
-      redirect_to login_url, :alert => "Invalid password or username"
+      redirect_to login_url, :notice => I18n.t('.invalid_password')
     end
   end
 
   def destroy
     session.delete :user_id
-    redirect_to login_url, :notice => "Logged out"
+    redirect_to login_url, :notice => I18n.t('.logged_out')
   end
 end

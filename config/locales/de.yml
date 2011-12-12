@@ -7,6 +7,8 @@ de:
   invited_users_msg:    "Einladungen an %{email_addresses} wurden verschickt."
   settings_saved:       "Einstellungen gespeichert"
   please_log_in:        "Bitte anmelden"
+  logged_out:           "Abgemeldet"
+  invalid_password:     "Username oder Passwort sind nicht richtig"
 
   date:
     extra:
@@ -82,6 +84,7 @@ de:
   overview:
     index:
       title:            "Überblick"
+      new_talk:         "Neue Unterhaltung beginnen"
     
   posts:
     edit:
@@ -94,6 +97,8 @@ de:
     new:
       title:          "Bitte anmelden"
       login:          "Anmelden"
+      username:       "Username"
+      password:       "Passwort"
 
   talks:
     new:

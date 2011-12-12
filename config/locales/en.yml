@@ -11,6 +11,8 @@ en:
   invited_users_msg:  "Invitations were sent to %{email_addresses}"
   settings_saved:     "Saved settings"
   please_log_in:      "Please log in"
+  logged_out:         "Logged out"
+  invalid_password:   "Invalid password or username"
 
   date:
     extra:
@@ -59,6 +61,7 @@ en:
   overview:
     index:
       title:          "Overview"
+      new_talk:       "Start new talk"
 
   posts:
     edit:
@@ -71,6 +74,8 @@ en:
     new:
       title:          "Please log in"
       login:          "Log in"
+      username:       "Username"
+      password:       "Password"
 
   talks:
     new:
