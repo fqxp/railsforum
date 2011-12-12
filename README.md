@@ -14,25 +14,24 @@ This application was developed with Ruby 1.9.2. and Rails 3.1. It won't work wit
 
 Installation
 ------------
-
-1. Clone the repository:
+Clone the repository:
 
     git clone git://github.com/frankploss/railsforum.git
 
-1. Install dependencies. It makes sense to set up [RVM](http://beginrescueend.com/rvm/install/) if you haven't done so yet.
-
+It makes sense to set up [RVM](http://beginrescueend.com/rvm/install/) if 
+you haven't done so yet. Then, install dependencies:
 
     bundle install
 
-1. Set up database
+Set up database:
 
-    > cp config/database.yml.sample config/database.yml
-    > vi config/database.yml    # adjust to your needs
-    > rake db:migrate
-    > rake db:seed
+    cp config/database.yml.sample config/database.yml
+    vi config/database.yml    # adjust to your needs
+    rake db:migrate
+    rake db:seed
 
-1. Try it out
+Try it out:
 
-    > rails server
+    rails server
     
-1. Visit [http://localhost:3000](http://localhost:3000) and log in as `admin` with password `verysecret!`.
+Visit [http://localhost:3000](http://localhost:3000) and log in as `admin` with password `verysecret!`.
