@@ -74,6 +74,7 @@ fieldset {
   min-width: $min-width;
   height: 120px;
   margin: auto; /* this centers the div */
+  background: url('logo.png') no-repeat;
   background-color: $base-color-dark;
   position: relative;
   font-size: 80%;
