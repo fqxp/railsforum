@@ -15,10 +15,10 @@ RELEASE MILESTONE 1
   - mark admin user
 4. i18n/l10n
 
-TODO:
------
-- what happens when there is nothing in the db? (reduce seed data)
-
+TODO
+----
+* check all views for correct authorization and right to exist
+* check if everything is tested
 
 Iteration 1
 -----------

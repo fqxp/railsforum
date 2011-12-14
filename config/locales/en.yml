@@ -9,10 +9,10 @@ en:
   talk_success_msg:   "Talk was successfully created"
   password_missing_msg: "Password is missing"
   invited_users_msg:  "Invitations were sent to %{email_addresses}"
-  settings_saved:     "Saved settings"
   please_log_in:      "Please log in"
   logged_out:         "Logged out"
   invalid_password:   "Invalid password or username"
+  permission_denied:  "You are not allowed to do that"
 
   date:
     extra:
@@ -104,6 +104,10 @@ en:
       new_talk:       "Begin new talk"
 
   users:
+    controller:
+      settings_saved: "Saved settings"
+      created_user:   "New user %{username} was successfully created"
+      permission_denied: "Your are not allowed to edit this user"
     index:
       title:          "Users"
       username:       "User name"

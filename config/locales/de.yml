@@ -9,6 +9,7 @@ de:
   please_log_in:        "Bitte anmelden"
   logged_out:           "Abgemeldet"
   invalid_password:     "Username oder Passwort sind nicht richtig"
+  permission_denied:    "Das darfst du leider nicht"
 
   date:
     extra:
@@ -127,6 +128,11 @@ de:
       new_talk:         "Neue Unterhaltung beginnen"
 
   users:
+    controller:
+    controller:
+      settings_saved: "Einstellungen gespeicher"
+      created_user:   "Die neue User_in %{username} wurde erfolgreich angelegt"
+      permission_denied: "Du darfst die Einstellungen dieser User_in nicht verändern"
     index:
       title:          "User"
       username:       "Username"

@@ -47,7 +47,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: "User #{@user.username} was successfully created." }
+        format.html { redirect_to users_url, notice: I18n.t('.users.controller.created_user', :username => @user.username) }
         format.json { render json: @user, status: :created, location: @user }
       else
         format.html { render action: "new" }
@@ -63,7 +63,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.update_attributes(params[:user])
-        format.html { redirect_to root_url, notice: I18n.t('.settings_saved') }
+        format.html { redirect_to root_url, notice: I18n.t('.users.controller.settings_saved') }
         format.json { head :ok }
       else
         format.html { render action: "edit" }
@@ -88,7 +88,7 @@ class UsersController < ApplicationController
     def authorize_by_id
       user = User.find(session[:user_id])
       unless user.is_admin or params[:id].to_i == session[:user_id]
-        redirect_to login_url, :notice => "Your are not allowed to visit the page you requested."
+        redirect_to login_url, :notice => I18n.t('.users.controller.permission_denied')
       end
     end
 end
