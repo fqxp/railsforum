@@ -94,6 +94,10 @@ de:
     form:
       text:             "Text des Beitrags"
 
+  registration:
+    registration:
+      submit:         "Neu anmelden"
+      
   sessions:
     new:
       title:          "Bitte anmelden"

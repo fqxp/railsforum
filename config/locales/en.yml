@@ -69,6 +69,10 @@ en:
       submit:         "Save post"
     form:
       text:           "Post text"
+
+  registration:
+    registration:
+      submit:         "Register"
       
   sessions:
     new:
@@ -127,7 +131,7 @@ en:
       submit:         "Save"
 
   invitation:
-    invite:
+    invitation:
       title:          "Invite new users"
       submit:         "Invite users"
     invitations_sent:
