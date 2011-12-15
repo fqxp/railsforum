@@ -28,7 +28,10 @@ class Talk < ActiveRecord::Base
       .page(page)
       
     talks.each do |talk|
-      talk.latest_post_at = DateTime.parse(talk['latest_post_at_s'])
+      # The following seems to be database-specific:
+      # sqlite returns a string, while MySQL::Time object - we're trying
+      # to be on the safe side
+      talk.latest_post_at = DateTime.parse(talk['latest_post_at_s'].to_s)
       talk.add_count_unread_posts! current_user_id
     end
     
