@@ -57,4 +57,6 @@ Railsforum::Application.configure do
 
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
+  
+  config.default_time_zone = 'CET'
 end
