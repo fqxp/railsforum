@@ -9,13 +9,13 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect_to overview_index_url
     else
-      session.delete :user_id
+      session[:user_id] = nil
       redirect_to login_url, :notice => I18n.t('.invalid_password')
     end
   end
 
   def destroy
-    session.delete :user_id
+    session[:user_id] = nil
     redirect_to login_url, :notice => I18n.t('.logged_out')
   end
 end
