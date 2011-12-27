@@ -1,9 +1,21 @@
 require 'test_helper'
 
 class SessionsControllerTest < ActionController::TestCase
+  def setup
+    # skip log in defined in test helper
+  end
+
   test "should get new" do
     get :new
     assert_response :success
+    assert_select 'h1', 'Please log in'
+  end
+  
+  test "should get new in german" do
+    @request.env['HTTP_ACCEPT_LANGUAGE'] = 'de' #-de,de;q=0.8'
+    get :new
+    assert_response :success
+    assert_select 'h1', 'Bitte anmelden'
   end
 
   test "should login" do
