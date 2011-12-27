@@ -61,6 +61,7 @@ GEM
     mime-types (1.17.2)
     minitest (2.7.0)
     multi_json (1.0.3)
+    mysql2 (0.3.11)
     paperclip (2.4.5)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
@@ -135,6 +136,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   minitest
+  mysql2
   paperclip (~> 2.4)
   rails (= 3.1.1)
   rails-i18n
