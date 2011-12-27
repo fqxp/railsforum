@@ -42,7 +42,8 @@ class PostsController < ApplicationController
     respond_to do |format|
       if @post.save
         flash[:current_post_id] = @post.id
-        format.html { redirect_to talk_path(@post.talk)+'#current', notice: 'Post was successfully created.' }
+        format.html { redirect_to talk_path(@post.talk)+'#current', 
+                          notice: I18n.t('.posts_controller.post_successfully_created') }
         format.json { render json: @post, status: :created, location: @post }
       else
         format.html { redirect_to talk_path(@post.talk) }

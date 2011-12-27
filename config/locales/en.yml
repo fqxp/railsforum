@@ -40,6 +40,9 @@ en:
       invite_addresses:
         email_address_list: "E-mail addresses"
 
+  posts_controller:
+    post_successfully_created: "Post was successfully created"
+
   layouts:
     application:
       forum_title:    "Rails forum"

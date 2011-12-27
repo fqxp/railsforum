@@ -64,6 +64,9 @@ de:
       invite_addresses:
         email_address_list: "eMail-Adressen"
 
+  posts_controller:
+    post_successfully_created: "Beitrag wurde erstellt"
+
   layouts:
     application:
       forum_title:      "Rails-Forum"
