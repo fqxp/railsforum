@@ -5,21 +5,21 @@ class ApplicationController < ActionController::Base
   before_filter :set_current_user
   before_filter :set_locale_from_user
   
-  protected
-    def populate_categories
-      @categories = Category.all
-    end
-    
-    def set_current_user
-      if session[:user_id]
-        begin
-          @current_user = User.find(session[:user_id])
-        rescue ActiveRecord::RecordNotFound
-          session[:user_id] = nil
-          @current_user = nil
-        end
+protected
+  def populate_categories
+    @categories = Category.all
+  end
+  
+  def set_current_user
+    if session[:user_id]
+      begin
+        @current_user = User.find(session[:user_id])
+      rescue ActiveRecord::RecordNotFound
+        session[:user_id] = nil
+        @current_user = nil
       end
     end
+  end
 
 private
   # Set locale from logged-in user information
@@ -28,10 +28,10 @@ private
       begin
         I18n.locale = @current_user.language
       rescue ActiveRecord::RecordNotFound
-        I18n.locale = extract_locale_from_accept_language_header
+        I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
       end
     else
-      I18n.locale = extract_locale_from_accept_language_header
+      I18n.locale = extract_locale_from_accept_language_header || I18n.default_locale
     end
   end  
 
@@ -56,6 +56,8 @@ private
   end
 
   def extract_locale_from_accept_language_header
-    request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    if request.env.has_key? 'HTTP_ACCEPT_LANGUAGE'
+      request.env['HTTP_ACCEPT_LANGUAGE'].scan(/^[a-z]{2}/).first
+    end
   end
 end
