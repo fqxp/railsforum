@@ -1,6 +1,6 @@
 <h1><%= t('.new_user')%></h1>
 
-<%= form_for @user, :url => 'create_user' do |f| %>
+<%= form_for @user, :url => register_path do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%=t 'error_msg', :count => @user.errors.count %></h2>
@@ -12,6 +12,8 @@
       </ul>
     </div>
   <% end %>
+
+  <%= hidden_field_tag :confirm_key, @confirm_key %>
 
   <div class="field">
     <%= f.label :username %><br/>
