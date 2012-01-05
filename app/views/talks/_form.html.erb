@@ -28,10 +28,16 @@
     <%= f.label :category, t('.category') %>
     <%= f.select :category_id, Category.all.collect { |c| [c.name, c.id] }, { :include_blank => true } %>
   </div>
-  
-  <%= render :partial => 'posts/form', :locals => { :post => @post } %>
+
+  <% if @post.talk_id.nil? %>  
+    <%= render :partial => 'posts/form', :locals => { :post => @post } %>
+  <% end %>
 
   <div class="actions">
-    <%= f.submit t('.submit') %>
+    <% if @talk.id.nil? %>
+      <%= f.submit t('.create_talk') %>
+    <% else %>
+      <%= f.submit t('.update_talk') %>
+    <% end %>
   </div>
 <% end %>

@@ -71,7 +71,12 @@ en:
       title:          "Edit post"
       submit:         "Save post"
     form:
-      text:           "Post text"
+      text:           "Edit answer"
+      answer:         "Answer"
+    inlineform:
+      submit_post:    "Update post"
+    post:
+      edit:           "Edit"
 
   registration:
     registration:
@@ -93,7 +98,8 @@ en:
       submit_post:    "Submit answer"
     form:
       title:          "Title"
-      submit:         "Send post"
+      create_talk:    "Create new talk"
+      update_talk:    "Update talk"
     talk:
       in:             "in"
       latest_post_at: "Latest post by"

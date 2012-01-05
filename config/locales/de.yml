@@ -95,7 +95,12 @@ de:
       title:            "Beitrag bearbeiten"
       submit:           "Beitrag abschicken"
     form:
-      text:             "Text des Beitrags"
+      text:             "Antwort bearbeiten"
+      answer:           "Antworten"
+    inlineform:
+      submit_post:      "Beitrag ändern"
+    post:
+      edit:             "Bearbeiten"
 
   registration:
     registration:
@@ -117,7 +122,8 @@ de:
       submit_post:      "Antwort abschicken"
     form:
       title:            "Titel"
-      submit:           "Unterhaltung beginnen"
+      create_talk:      "Unterhaltung beginnen"
+      update_talk:      "Unterhaltung speichern"
     talk:
       in:               "in"
       latest_post_by:   "Letzter Beitrag von"

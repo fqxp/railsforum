@@ -1,0 +1,5 @@
+$('#post-<%= @post.id %>').html('<%= j(render(:partial => 'inlineform', :locals => { :post => @post })) %>');
+$(document).ready(function () {
+  $('button,input[type="submit"]').button();
+});
+$('#edit_post_<%= @post.id %> textarea').rteditor();

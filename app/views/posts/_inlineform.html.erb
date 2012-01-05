@@ -1,0 +1,10 @@
+<fieldset>
+  <%= form_for(post, :html => { :class => 'edit_post_form' },  
+               :method => :put, :remote => true) do |f| %>
+    <%= render :partial => 'posts/form', :locals => { :post => post } %>
+    
+    <div class="actions">
+      <%= f.submit t('.submit_post') %>
+    </div>
+  <% end %>
+</fieldset>

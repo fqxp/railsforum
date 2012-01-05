@@ -1,6 +1,12 @@
 <% content_for :jquery_script do %>
   $('#new_post_form').enable_submit_if_possible('textarea#post_text');
   $('#new_post_form textarea').rteditor();
+
+  $('*[data-remote=true]')
+    .live('ajax:error', function(xhr, status, error) {
+      alert('AJAX error: ' + status.status + ' ' + status.statusText);
+      console.log(status);
+    });
 <% end %>
 
 <div class="talk-page">
@@ -14,13 +20,9 @@
   <% end %>
 
   <fieldset>
-    <%= form_for @post, :html => { :id => 'new_post_form' } do |f| %>
-      <%= f.hidden_field :talk_id %>
-      <div class="field">
-        <%= f.label :text, t('.answer') %><br />
-        <%= f.text_area :text, :size => '50x8' %>
-        <div id="coded_text" style="display:none"/>
-      </div>
+    <%= form_for @post, :html => { :id => 'new_post_form' }, :remote => true do |f| %>
+      <%= render :partial => 'posts/form', :locals => { :post => @post } %>
+      
       <div class="actions">
         <%= f.submit t('.submit_post') %>
       </div>

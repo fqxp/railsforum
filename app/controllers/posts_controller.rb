@@ -26,6 +26,10 @@ class PostsController < ApplicationController
   def edit
     with_owner_only(Post.find(params[:id])) do |post|
       @post = post
+      respond_to do |format|
+        format.html # edit.html.erb
+        format.js
+      end
     end
   end
 
@@ -45,6 +49,7 @@ class PostsController < ApplicationController
         format.html { redirect_to talk_path(@post.talk)+'#current', 
                           notice: I18n.t('.posts_controller.post_successfully_created') }
         format.json { render json: @post, status: :created, location: @post }
+        format.js
       else
         format.html { redirect_to talk_path(@post.talk) }
         format.json { render json: @post.errors, status: :unprocessable_entity }
@@ -57,12 +62,13 @@ class PostsController < ApplicationController
   def update
     with_owner_only(Post.find(params[:id])) do |post|
       @post = post
-
       respond_to do |format|
-        if @post.update_attributes(params[:post])
-          format.html { redirect_to talk_path(@post.talk), notice: 'Post was successfully updated.',
-                        :anchor => 'current' }
-          format.json { head :ok }
+        if false or @post.update_attributes(params[:post])
+          flash[:current_post_id] = @post.id
+          format.html { redirect_to talk_path(@post.talk), 
+                                    notice: 'Post was successfully updated.',
+                                    anchor: 'current' }
+          format.js
         else
           format.html { render action: "edit" }
           format.json { render json: @post.errors, status: :unprocessable_entity }

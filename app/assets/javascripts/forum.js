@@ -93,5 +93,11 @@ $.fn.extend({
 		    	$this.change();
 		    }
 	  	});
+	},
+	
+	flash: function() {
+		var bgcolor_before = this.css('background-color');
+		this.css({'background-color': '#FFD78D'})
+			.animate({'background-color': bgcolor_before}, 5000);
 	}
 });
