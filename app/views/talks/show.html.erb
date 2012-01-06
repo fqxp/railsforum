@@ -4,8 +4,8 @@
 
   $('*[data-remote=true]')
     .live('ajax:error', function(xhr, status, error) {
-      alert('AJAX error: ' + status.status + ' ' + status.statusText);
-      console.log(status);
+      console.error('AJAX error:');
+      console.error(status);
     });
 <% end %>
 
