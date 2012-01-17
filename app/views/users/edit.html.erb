@@ -2,4 +2,8 @@
 
 <fieldset>
   <%= render 'form' %>
+
+  <p>
+    <%= button_to t('.edit_password'), edit_password_path(session[:user_id]), :method => :get %>
+  </p>
 </fieldset>

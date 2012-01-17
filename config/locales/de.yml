@@ -47,6 +47,7 @@ de:
         realname:       "Realname"
         email_address:  "eMail-Adresse"
         password:       "Passwort"
+        language:       "Sprache"
 
   activemodel:
     errors:
@@ -142,10 +143,10 @@ de:
 
   users:
     controller:
-    controller:
-      settings_saved: "Einstellungen gespeicher"
+      settings_saved: "Einstellungen gespeichert"
       created_user:   "Die neue User_in %{username} wurde erfolgreich angelegt"
       permission_denied: "Du darfst die Einstellungen dieser User_in nicht verändern"
+      password_saved: "Das neue Passwort wurde gespeichert"
     index:
       title:          "User"
       username:       "Username"
@@ -159,6 +160,14 @@ de:
       new_user:       "Einstellungen speichern"
     edit:
       title:          "Einstellungen bearbeiten"
+      edit_password:  "Passwort ändern ..."
+    edit_password:
+      title:          "Passwort ändern"
+    password_form:
+      current_password: "Jetziges Passwort"
+      password:       "Neues Passwort"
+      confirm_password: "Neues Passwort bestätigen"
+      submit:         "Neues Passwort speichern"
     form:
       password:       "Passwort"
       confirm_password: "Passwort wiederholen"

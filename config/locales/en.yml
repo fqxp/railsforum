@@ -121,6 +121,7 @@ en:
       settings_saved: "Saved settings"
       created_user:   "New user %{username} was successfully created"
       permission_denied: "Your are not allowed to edit this user"
+      password_saved: "New password was saved"
     index:
       title:          "Users"
       username:       "User name"
@@ -134,9 +135,15 @@ en:
       new_user:       "New User"
     edit:
       title:          "Edit Settings"
+      edit_password:  "Change password ..."
+    edit_password:
+      title:          "Edit password"
+    password_form:
+      current_password: "Current password"
+      password:       "New password"
+      confirm_password: "Confirm new password"
+      submit:         "Save new password"
     form:
-      password:       "Password"
-      confirm_password: "Confirm password"
       submit:         "Save"
 
   invitation:

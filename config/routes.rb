@@ -13,6 +13,9 @@ Railsforum::Application.routes.draw do
   resources :talks
   resources :categories
 
+  get 'users/:id/edit_password' => 'users#edit_password', :as => :edit_password
+  put 'users/:id/update_password' => 'users#update_password', :as => :update_password
+
   controller :invitation do
     get 'invite' => :invitation
     post 'invite' => :invite

@@ -84,11 +84,31 @@ class UsersController < ApplicationController
     end
   end
   
-  private
-    def authorize_by_id
-      user = User.find(session[:user_id])
-      unless user.is_admin or params[:id].to_i == session[:user_id]
-        redirect_to login_url, :notice => I18n.t('.users.controller.permission_denied')
+  def edit_password
+    @user = User.find(params[:id])
+  end
+
+  # PUT /users/1
+  # PUT /users/1.json
+  def update_password
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      if @user.update_attributes(params[:user])
+        format.html { redirect_to edit_user_url(@user), notice: I18n.t('.users.controller.password_saved') }
+        format.json { head :ok }
+      else
+        format.html { render action: :edit_password }
+        format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+private
+  def authorize_by_id
+    user = User.find(session[:user_id])
+    unless user.is_admin or params[:id].to_i == session[:user_id]
+      redirect_to login_url, :notice => I18n.t('.users.controller.permission_denied')
+    end
+  end
 end

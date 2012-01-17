@@ -52,4 +52,17 @@ class UsersControllerTest < ActionController::TestCase
 
     assert_redirected_to users_path
   end
+  
+  test "should get edit password page" do
+    get :edit_password, id: @user.to_param
+    assert_response :success
+  end
+  
+  test "should change password" do
+    put :update_password, id: @user.id, :current_password => 'secret!', 
+        :user => {:password => 'evenmoresecret!', :password_confirmation => 'evenmoresecret!'}
+    assert_redirected_to edit_user_path(@user)
+    assert_nil User.authenticate('user_one', 'secret!')
+    assert_not_nil User.authenticate('user_one', 'evenmoresecret!')
+  end
 end
