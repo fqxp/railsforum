@@ -6,7 +6,7 @@
     });
 <% end %>
 
-<%= form_for(@user) do |f| %>
+<%= form_for(@user, :url => registration_path(:user), :html => {:method => :put}) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
       <h2><%=t 'error_msg', :count => @user.errors.count %></h2>
@@ -24,8 +24,8 @@
     <%= f.text_field :username %>
   </div>
   <div class="field">
-    <%= f.label :email_address %>
-    <%= f.email_field :email_address %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
   </div>
   <div class="field">
     <%= f.label :realname %>

@@ -9,6 +9,9 @@
       if ($('#notice').text()) {
         $('#notice').fadeIn().delay(3000).fadeOut('slow');
       }
+      if ($('#alert').text()) {
+        $('#alert').fadeIn().delay(3000).fadeOut('slow');
+      }
       
       <%= yield :jquery_script %>
     })
@@ -19,19 +22,20 @@
 	<div id="container">
 	  <% if notice.present? %>
       <div id="notice" style="display:none"><%= notice -%></div>
+      <div id="alert" style="display:none"><%= alert -%></div>
     <% end %>
 
     <div id="header">
       <div class="navigation">
-        <% if session[:user_id] %>
-  	      <%= link_to @current_user.username, edit_user_path(session[:user_id]) %>
-  	      <%= link_to t('.log_out'), logout_path %>
+        <% if user_signed_in? %>
+  	      <%= link_to current_user.username, edit_user_registration_path %>
+  	      <%= link_to t('.log_out'), destroy_user_session_path, :method => :delete %>
         <% end %>
        </div>
 	  </div>
     <div id="main">
     	<div id="sidebar">
-        <% if session[:user_id] %>
+        <% if user_signed_in? %>
       	  <div class="panel">
       	    <h2><%= t('.categories') %></h2>
             <ul>

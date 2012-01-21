@@ -7,7 +7,7 @@ class TalksController < ApplicationController
     @current_category = @talk.category
     @post = Post.new(:talk => @talk)
  
-    TalkVisit.mark_visited(@talk.id, @current_user.id)   
+    TalkVisit.mark_visited(@talk.id, current_user.id)   
 
     respond_to do |format|
       format.html # show.html.erb
@@ -42,8 +42,7 @@ class TalksController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @talk = Talk.new(params[:talk])
-    user = User.find(session[:user_id])
-    @post.user = @talk.user = user
+    @post.user = @talk.user = current_user
     
     respond_to do |format|
       begin

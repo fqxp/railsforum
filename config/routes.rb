@@ -2,29 +2,32 @@ Railsforum::Application.routes.draw do
   get 'overview/index'
   get 'admin' => "admin#index"
   
-  controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    get 'logout' => :destroy
-  end
+#  controller :sessions do
+#    get 'login' => :new
+#    post 'login' => :create
+#    get 'logout' => :destroy
+#  end
   
-  resources :users
+#  resources :users
   resources :posts
   resources :talks
   resources :categories
 
-  get 'users/:id/edit_password' => 'users#edit_password', :as => :edit_password
-  put 'users/:id/update_password' => 'users#update_password', :as => :update_password
+  devise_for :users, :controllers => { :registrations => 'registrations' }
+  controller :users do
+    get 'users/:id' => :show, :as => :user
+  end
 
   controller :invitation do
     get 'invite' => :invitation
     post 'invite' => :invite
   end
   
-  controller :registration do
-    get 'register' => :registration
-    post 'register' => :register
-  end
+#  controller :registration do
+#    get 'register' => :registration
+#    post 'register' => :register
+#  end
+
   
   post 'preview' => "preview#bbcode"
 

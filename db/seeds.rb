@@ -16,7 +16,7 @@ users << User.create(
   :realname => 'Administrator',
   :password => 'verysecret!',
   :language => 'en',
-  :email_address => 'root@localhost',
+  :email => 'root@traal.ath.cx',
   :is_admin => true,
   :avatar => File.open('public/images/avatar-default.png')
 )

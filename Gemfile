@@ -33,6 +33,8 @@ gem 'jquery-rails'
 
 gem 'minitest'
 
+gem 'devise', '~> 1.5.3'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
