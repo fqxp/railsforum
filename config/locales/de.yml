@@ -3,13 +3,7 @@ de:
     one:                "Es ist ein Fehler aufgetreten:"
     other:              "Es sind %{count} Fehler aufgetreten:"
   talk_success_msg:     "Unterhaltung wurde begonnen"
-  password_missing_msg: "fehlt"
-  invited_users_msg:    "Einladungen an %{email_addresses} wurden verschickt."
   settings_saved:       "Einstellungen gespeichert"
-  please_log_in:        "Bitte anmelden"
-  logged_out:           "Abgemeldet"
-  invalid_password:     "Username oder Passwort sind nicht richtig"
-  permission_denied:    "Das darfst du leider nicht"
 
   date:
     extra:
@@ -20,6 +14,7 @@ de:
         zero:           "gerade eben"
         one:            "vor ungefähr einer Minute"
         other:          "vor ungefähr %{count} Minuten"
+
   time:
     formats:
       date_without_year: "%a., %e. %b."
@@ -45,25 +40,9 @@ de:
       user:
         username:       "Username"
         realname:       "Realname"
-        email_address:  "eMail-Adresse"
+        email:          "E-Mail-Adresse"
         password:       "Passwort"
         language:       "Sprache"
-
-  activemodel:
-    errors:
-      messages:
-        inclusion:      "ist nicht in der Liste enthalten"
-        blank:          "darf nicht leer sein"
-        password:       "Passwort fehlt"
-      models:
-        invite_addresses:
-          attributes:
-            email_address_list:
-              blank:      "dürfen nicht leer sein"
-              invalid_email_address: "enthält eine komische Adresse: %{address}"
-    attributes:
-      invite_addresses:
-        email_address_list: "eMail-Adressen"
 
   posts_controller:
     post_successfully_created: "Beitrag wurde erstellt"
@@ -72,7 +51,7 @@ de:
     application:
       forum_title:      "Rails-Forum"
       settings:         "Einstellungen"
-      invite:           "Neue User_innen einladen"
+      invite:           "Neue User_in einladen"
       log_out:          "Abmelden"
       start_page:       "Überblick"
       categories:       "Kategorien"
@@ -103,10 +82,6 @@ de:
     post:
       edit:             "Bearbeiten"
 
-  registration:
-    registration:
-      submit:         "Neu anmelden"
-      
   sessions:
     new:
       title:          "Bitte anmelden"
@@ -148,15 +123,15 @@ de:
       permission_denied: "Du darfst die Einstellungen dieser User_in nicht verändern"
       password_saved: "Das neue Passwort wurde gespeichert"
     index:
-      title:          "User"
+      title:          "User_innen"
       username:       "Username"
       you:            "du"
       realname:       "Realname"
-      email_address:  "eMail-Adresse"
+      email_address:  "E-Mail-Adresse"
       show:           "Anzeigen"
       edit:           "Bearbeiten"
       destroy:        "Löschen"
-      confirm_destroy: "Sind Sie sicher?"
+      confirm_destroy: "Bist du sicher, dass du die User_in \"%{username}\" löschen möchtest?"
       new_user:       "Einstellungen speichern"
     edit:
       title:          "Einstellungen bearbeiten"
@@ -172,13 +147,3 @@ de:
       password:       "Passwort"
       confirm_password: "Passwort wiederholen"
       submit:         "Speichern"
-
-  invitation:
-    invitation:
-      title:          "Neue User_innen einladen"
-      submit:         "User_innen einladen"
-    invitation_sent:  "%{address} wurde eine Einladung per E-Mail geschickt"
-    user_already_invited: "%{address} wurde schon vorher eine Einladung geschickt"
-    user_already_exists:  "%{username} hat sich schon für die Adresse %{address} angemeldet"
-    new_user:
-      submit:         "User_in anlegen"

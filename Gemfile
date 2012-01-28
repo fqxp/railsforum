@@ -33,7 +33,8 @@ gem 'jquery-rails'
 
 gem 'minitest'
 
-gem 'devise', '~> 1.5.3'
+gem 'devise', '~> 1.5.0'
+gem 'devise_invitable', '~> 0.6.0'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -42,7 +43,7 @@ gem 'devise', '~> 1.5.3'
 # gem 'unicorn'
 
 # Deploy with Capistrano
-# gem 'capistrano'
+gem 'capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
@@ -50,6 +51,8 @@ gem 'devise', '~> 1.5.3'
 group :test do
   # Pretty printed test output
   gem 'turn', :require => false
+  gem 'factory_girl_rails', '~> 1.2'
+  gem 'mocha', '~> 0.10.0'
 end
 
 group :production do

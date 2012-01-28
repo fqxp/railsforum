@@ -1,33 +1,33 @@
 # Additional translations at https://github.com/plataformatec/devise/wiki/I18n
 
-en:
+de:
   errors:
     messages:
       expired: "has expired, please request a new one"
-      not_found: "not found"
+      not_found: "nicht gefunden"
       already_confirmed: "was already confirmed, please try signing in"
-      not_locked: "was not locked"
+      not_locked: "war nicht gesperrt"
       not_saved:
         one: "1 error prohibited this %{resource} from being saved:"
         other: "%{count} errors prohibited this %{resource} from being saved:"
 
   devise:
     failure:
-      already_authenticated: 'You are already signed in.'
+      already_authenticated: 'Du bist schon angemeldet.'
       unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: 'You have to confirm your account before continuing.'
-      locked: 'Your account is locked.'
-      invalid: 'Invalid email or password.'
+      locked: 'Dein Account ist gesperrt.'
+      invalid: 'Username oder Passwort ist nicht gültig.'
       invalid_token: 'Invalid authentication token.'
       timeout: 'Your session expired, please sign in again to continue.'
-      inactive: 'Your account was not activated yet.'
+      inactive: 'Dein Account ist noch nicht aktiviert.'
     sessions:
-      signed_in: 'Signed in successfully.'
-      signed_out: 'Signed out successfully.'
+      signed_in: 'Du bist jetzt angemeldet.'
+      signed_out: 'Du bist jetzt abgemeldet.'
       new:
-        title: 'Sign in'
-        remember_me: 'Remember me'
-        sign_in: 'Sign in'
+        title: 'Anmelden'
+        remember_me: 'angemeldet bleiben'
+        sign_in: 'Anmelden'
     passwords:
       send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
       updated: 'Your password was changed successfully. You are now signed in.'
@@ -37,6 +37,15 @@ en:
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
       send_paranoid_instructions: 'If your e-mail exists on our database, you will receive an email with instructions about how to confirm your account in a few minutes.'
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
+    registrations:
+      signed_up: 'Welcome! You have signed up successfully.'
+      inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+      updated: 'You updated your account successfully.'
+      destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+      reasons:
+        inactive: 'inactive'
+        unconfirmed: 'unconfirmed'
+        locked: 'locked'
     unlocks:
       send_instructions: 'You will receive an email with instructions about how to unlock your account in a few minutes.'
       unlocked: 'Your account was successfully unlocked. You are now signed in.'
@@ -51,14 +60,3 @@ en:
         subject: 'Reset password instructions'
       unlock_instructions:
         subject: 'Unlock Instructions'
-
-  # These translations are not under 'devise' because we extended our own RegistrationsController
-  registrations:
-    signed_up: 'Welcome! You have signed up successfully.'
-    inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
-    updated: 'You updated your account successfully.'
-    destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
-    reasons:
-      inactive: 'inactive'
-      unconfirmed: 'unconfirmed'
-      locked: 'locked'

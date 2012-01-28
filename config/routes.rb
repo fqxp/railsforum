@@ -2,33 +2,22 @@ Railsforum::Application.routes.draw do
   get 'overview/index'
   get 'admin' => "admin#index"
   
-#  controller :sessions do
-#    get 'login' => :new
-#    post 'login' => :create
-#    get 'logout' => :destroy
-#  end
-  
-#  resources :users
   resources :posts
   resources :talks
   resources :categories
 
-  devise_for :users, :controllers => { :registrations => 'registrations' }
-  controller :users do
-    get 'users/:id' => :show, :as => :user
+  devise_for :users, :controllers => { :registrations => 'registrations' } do
   end
-
-  controller :invitation do
-    get 'invite' => :invitation
-    post 'invite' => :invite
+  resources :users
+  
+  controller :admin do
+    get 'admin/index' => 'admin#index'
   end
   
-#  controller :registration do
-#    get 'register' => :registration
-#    post 'register' => :register
+#  controller :users do
+#    get 'users/:id' => :show, :as => :user
 #  end
 
-  
   post 'preview' => "preview#bbcode"
 
   # The priority is based upon order of creation:

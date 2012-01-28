@@ -1,17 +1,17 @@
-<% SALT = "NaCl" unless defined?(SALT) %>
-
 one:
   username: user_one
-  hashed_password: <%= User.encrypt_password('secret!', SALT) %>
-  salt: <%= SALT %>
+  # password is 'secret!'
+  encrypted_password: $2a$10$x802DgPTEM/fmcqt9Z0ohOeSlzB3AiXvPHupzEsfCrwc1IshBzdxu
   realname: 'User One'
-  email_address: one@example.org
+  email: one@example.org
+  language: en
   is_admin: true
 
 two:
   username: user_two
-  hashed_password: <%= User.encrypt_password('secret!', SALT) %>
-  salt: <%= SALT %>
+  # password is 'secret!'
+  encrypted_password: $2a$10$x802DgPTEM/fmcqt9Z0ohOeSlzB3AiXvPHupzEsfCrwc1IshBzdxu
   realname: 'User Two'
-  email_address: two@example.org
+  email: two@example.org
+  language: de
   is_admin: false

@@ -20,4 +20,10 @@ module ApplicationHelper
       return I18n.l(local_dt, :format => :date)
     end
   end
+  
+  def return_to_field
+    if params.has_key? :return_to
+      return hidden_field_tag :return_to, params[:return_to]
+    end
+  end
 end

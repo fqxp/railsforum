@@ -1,0 +1,24 @@
+en:
+  devise:
+    invitations:
+      send_instructions: 'Eine Einladungsmail wurde an %{email} verschickt.'
+      invitation_token_invalid: 'Das Einladungstoken ist nicht (mehr) gültig!'
+      updated: "Du hast dich erfolgreich angemeldet."
+      no_invitations_remaining: "Keine weiteren Einladungen"
+      edit:
+        new_user:       "Als neue User_in anmelden"
+        submit:         "Anmelden"
+    mailer:
+      invitation_instructions:
+        subject:        "Beim Forum anmelden"
+
+  # These translations are not under 'devise' because we extended our own RegistrationsController
+  registrations:
+    signed_up: 'Welcome! You have signed up successfully.'
+    inactive_signed_up: 'You have signed up successfully. However, we could not sign you in because your account is %{reason}.'
+    updated: 'You updated your account successfully.'
+    destroyed: 'Bye! Your account was successfully cancelled. We hope to see you again soon.'
+    reasons:
+      inactive: 'inactive'
+      unconfirmed: 'unconfirmed'
+      locked: 'locked'

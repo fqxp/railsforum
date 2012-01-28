@@ -1,20 +1,24 @@
-<div class="user">
-  <div class="avatar">
-    <%= image_tag @user.avatar.url(:medium) %>
-  </div>
+<h1><%= @user.realname %></h1>
 
-  <div class="user-field">
-    <span class="label">Username:</span>
-    <span class="field"><%= @user.username %></span>
-  </div>
+<div class="info-block">
+  <div class="user">
+    <div class="avatar">
+      <%= image_tag @user.avatar.url(:medium) %>
+    </div>
   
-  <div class="user-field">
-    <span class="label">Realname:</label>
-    <span class="field"><%= @user.realname %></span>
-  </div>
-  
-  <div class="user-field">
-    <span class="label">Email address:</span>
-    <span class="field"><%= mail_to @user.email %></span>
+    <div class="user-field">
+      <span class="label">Username:</span>
+      <span class="field"><%= @user.username %></span>
+    </div>
+    
+    <div class="user-field">
+      <span class="label">Realname:</span>
+      <span class="field"><%= @user.realname %></span>
+    </div>
+    
+    <div class="user-field">
+      <span class="label">Email address:</span>
+      <span class="field"><%= mail_to @user.email %></span>
+    </div>
   </div>
 </div>

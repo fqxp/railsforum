@@ -2,17 +2,10 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
   error_msg:
     one:              "1 error prohibited this talk from being saved:"
     other:            "%{count} errors prohibited this talk from being saved:"
   talk_success_msg:   "Talk was successfully created"
-  password_missing_msg: "Password is missing"
-  invited_users_msg:  "Invitations were sent to %{email_addresses}"
-  please_log_in:      "Please log in"
-  logged_out:         "Logged out"
-  invalid_password:   "Invalid password or username"
-  permission_denied:  "You are not allowed to do that"
 
   date:
     extra:
@@ -22,23 +15,24 @@ en:
         zero:           "just now"
         one:            "about a minute ago"
         other:          "about %{count} minutes ago"
+
   time:
     formats:
       date_without_year: "%a, %b %e"
       date:             "%a, %b %e, %Y"
       time:             "%H:%M"
 
-  activemodel:
-    errors:
-      models:
-        invite_addresses:
-          attributes:
-            email_address_list:
-              blank:      "may not be empty"
-              invalid_email_address: "contains a weird address: %{address}"
+  activerecord:
     attributes:
-      invite_addresses:
-        email_address_list: "E-mail addresses"
+      post:
+        text:           "Text"
+      talk:
+        title:          "Title"
+      user:
+        username:       "User name"
+        realname:       "Real name"
+        email:          "Email adress"
+        password:       "Password"
 
   posts_controller:
     post_successfully_created: "Post was successfully created"
@@ -48,7 +42,7 @@ en:
       forum_title:    "Rails forum"
       settings:       "Settings"
       invite:         "Invite new users"
-      log_out:        "Log out"
+      log_out:        "Sign off"
       start_page:     "Overview"
       categories:     "Categories"
       functions:      "Functions"
@@ -66,6 +60,11 @@ en:
       title:          "Overview"
       new_talk:       "Start new talk"
 
+  categories:
+    show:
+      title:          "Category: %{category}"
+      new_talk:       "Begin new talk"
+
   posts:
     edit:
       title:          "Edit post"
@@ -77,17 +76,6 @@ en:
       submit_post:    "Update post"
     post:
       edit:           "Edit"
-
-  registration:
-    registration:
-      submit:         "Register"
-      
-  sessions:
-    new:
-      title:          "Please log in"
-      login:          "Log in"
-      username:       "Username"
-      password:       "Password"
 
   talks:
     new:
@@ -110,11 +98,6 @@ en:
       messages:
         one:          "One post"
         other:        "%{count} posts"
-
-  categories:
-    show:
-      title:          "Category: %{category}"
-      new_talk:       "Begin new talk"
 
   users:
     controller:
@@ -145,14 +128,3 @@ en:
       submit:         "Save new password"
     form:
       submit:         "Save"
-
-  invitation:
-    invitation:
-      title:          "Invite new users"
-      submit:         "Invite users"
-    invitations_sent:
-    invitation_sent:  "%{address} has been sent an invitation e-mail"
-    user_already_invited: "%{address} had already received an invitation"
-    user_already_exists:  "%{username} has already set up an acount for address %{address}"
-    new_user:
-      submit:         "Create user"

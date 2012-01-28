@@ -9,17 +9,12 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
+  include Devise::TestHelpers
+  
   # Add more helper methods to be used by all tests here...
-  
-  def login_as(user)
-    session[:user_id] = user.id
-  end
-  
-  def logout
-    session.delete :user_id
-  end
-  
   def setup
-    login_as users(:one) if defined? session
+    user = users(:one)
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+    sign_in user
   end
 end

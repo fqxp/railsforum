@@ -35,6 +35,7 @@ Railsforum::Application.configure do
     #:domain => 'localhost',
     :enable_starttls_auto => false
   }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }  
   
   config.default_time_zone = 'CET'
 end

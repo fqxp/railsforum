@@ -22,14 +22,6 @@ class UsersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create user" do
-    assert_difference('User.count') do
-      post :create, user: @user_params
-    end
-
-    assert_redirected_to users_path
-  end
-
   test "should show user" do
     get :show, id: @user.to_param
     assert_response :success

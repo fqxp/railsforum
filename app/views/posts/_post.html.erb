@@ -12,7 +12,7 @@
     <span class="meta-info">
       <span class="by-user"><%= link_to post.user.username, user_path(post.user) %></span>
       <span class="created-at"><%= human_time post.created_at %></span>
-      <% if session[:user_id] == post.user_id %>
+      <% if current_user[:id] == post.user_id %>
         <%= link_to t('.edit'), edit_post_path(post.id), :remote => true, :class => 'edit_post' %>
       <% end %>
     </span>

@@ -38,10 +38,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(params[:post])
     @talk = @post.talk
-    user = User.find(session[:user_id])
-    @post.user = user
+    @post.user = current_user
 
-    TalkVisit.mark_visited(@talk.id, user.id)   
+    TalkVisit.mark_visited(@talk.id, current_user.id)   
 
     respond_to do |format|
       if @post.save

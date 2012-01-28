@@ -1,31 +1,53 @@
+<% content_for :jquery_script do %>
+  $('#tabs').tabs();
+<% end %>
+
 <h1><%=t '.title' %></h1>
-<% if notice %>
-  <p id="notice"><%= notice %>
-<% end %>
 
-<table>
-  <tr>
-    <th><%= t('.username') %></th>
-    <th><%= t('.realname') %></th>
-    <th><%= t('.email_address') %></th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="tabs">
+  <ul>
+    <li><a href="#tabs-1"><%= t('.users') %></a></li>
+    <li><a href="#tabs-2"><%= t('.categories') %></a></li>
+  </ul>
 
-<% @users.each do |user| %>
-  <tr>
-    <td><%= user.username %>
-      <% if session[:user_id] == user.id %><em>(<%= t('.you') %>)</em><% end %>
-    </td>
-    <td><%= user.realname %></td>
-    <td><%= user.email_address %></td>
-    <td><%= link_to t('.show'), user %></td>
-    <td><%= link_to t('.edit'), edit_user_path(user) %></td>
-    <td>
-      <% if session[:user_id] != user.id %>
-        <%= link_to t('.destroy'), user, confirm: t('.confirm_destroy'), method: :delete %></td>
-      <% end %>
-  </tr>
-<% end %>
-</table>
+  <div id="tabs-1">
+    <table>
+      <tr>
+        <th></th>
+        <th><%= t('activerecord.attributes.user.username') %></th>
+        <th><%= t('activerecord.attributes.user.realname') %></th>
+        <th><%= t('activerecord.attributes.user.email') %></th>
+        <th></th>
+        <th></th>
+      </tr>
+    
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= image_tag user.avatar.url(:thumb) %>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to user_path(user) do %>
+            <%= user.username %>
+            <% if current_user[:id] == user.id %><em>(<%= t('.you') %>)</em><% end %>
+          <% end %>
+        </td>
+        <td><%= user.realname %></td>
+        <td><%= user.email %></td>
+        <td><%= link_to t('.edit'), edit_user_path(user, :return_to => request.fullpath) %></td>
+        <td>
+          <% if current_user[:id] != user.id %>
+            <%= link_to t('.destroy'), user, confirm: t('.confirm_destroy', :username => user.username), method: :delete %></td>
+          <% end %>
+      </tr>
+    <% end %>
+    </table>
+  </div>
+  
+  <div id="tabs-2">
+    Categories here.
+  </div>
+
+</div>

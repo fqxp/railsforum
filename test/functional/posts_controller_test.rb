@@ -30,9 +30,10 @@ class PostsControllerTest < ActionController::TestCase
     assert_response :success
   end
   
-  test "should be redirected to login page when trying to edit others post" do
+  test "should get 403 error when trying to edit others post" do
     get :edit, id: @post_from_other_user.to_param
-    assert_redirected_to login_url
+    #assert_redirected_to new_user_session_url
+    assert_response :forbidden
   end
 
   test "should update post" do
@@ -40,9 +41,9 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to talk_path(@post.talk)
   end
   
-  test "should be redirected to login page when trying to update others post" do
+  test "should get 403 error when trying to update others post" do
     put :update, id: @post_from_other_user.to_param, post: @post_from_other_user.attributes
-    assert_redirected_to login_url
+    assert_response :forbidden
   end
 
   test "should destroy post" do
@@ -53,11 +54,11 @@ class PostsControllerTest < ActionController::TestCase
     assert_redirected_to posts_path
   end
 
-  test "should be redirected to login page when trying to destroy other user's post" do
+  test "should get 403 when trying to destroy other user's post" do
     assert_no_difference('Post.count') do
       delete :destroy, id: @post_from_other_user.to_param
     end
 
-    assert_redirected_to login_url
+    assert_response :forbidden
   end
 end

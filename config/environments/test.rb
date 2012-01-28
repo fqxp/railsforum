@@ -37,5 +37,13 @@ Railsforum::Application.configure do
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
 
+  # Mail config
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    :address => 'localhost',
+    :enable_starttls_auto => false
+  }
+  config.action_mailer.default_url_options = { :host => "localhost:3000" }  
+  
   config.default_time_zone = 'CET'
 end

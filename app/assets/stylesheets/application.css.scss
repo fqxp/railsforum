@@ -16,6 +16,9 @@ body {
   background-color: gray;
   font-family: 'lucida grande','Lucida Sans Unicode',tahoma,sans-serif;
   font-size: 1em;
+  width: 900px;
+  margin: 0 auto;
+  max-width: 100%;
 }
 
 a {
@@ -44,7 +47,19 @@ img {
   border: 0px;
 }
 
-fieldset {
+.clearfix {
+  display: block;
+}
+
+.clearfix:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+.info-block, fieldset {
   background-color: $base-color-light;
   margin: 4px 0;
   padding: 6px 12px;
@@ -66,12 +81,16 @@ fieldset {
   }
 }
 
-#container {}
+#wrap {
+  background-color: white;
+  margin: 15px;
+  min-width: 650px;
+}
 
 #header {
-  width: 90%;
+  /*width: 90%;
   max-width: $max-width;
-  min-width: $min-width;
+  min-width: $min-width; */
   height: 120px;
   margin: auto; /* this centers the div */
   background: url('logo.png') no-repeat;
@@ -93,21 +112,21 @@ fieldset {
   }
 }
 
+#content {
+  padding: 18px 12px;
+  min-width: 630px;
+}
+
 #main {
-  margin: auto;
-  max-width: 900px;
-  width: 90%;
-  min-width: 475px;
-  min-height: 400px;
-  clear: left;
-  background-color: white;
+  padding-bottom: 20px;
+  overflow: hidden;
   
   h1 {
     color: black;
     background-color: $base-color-light;
     font-size: 120%;
     font-weight: normal;
-    margin: 7px 0 0 0;
+    margin: 0;
     padding: 7px 6px;
     border-radius: 4px;
     -moz-border-radius: 4px;
@@ -121,18 +140,50 @@ fieldset {
       &:hover { background-color: $base-color; }
     }
   }
+
+  .pagination {
+    margin: 18px 0;
+    text-align: center;
+    &>span >a {
+      font-size: 12px;
+      padding: 0 4px;
+      margin: 0px 3px;
+      color: $base-color-dark;
+      background-color: $base-color-light;
+      border: 1px solid $base-color;
+      border-radius: 4px;
+    }
+    .page {
+      a, &.gap, &.current {
+        font-size: 18px;
+        font-weight: bold;
+        margin: 0 2px;
+        padding: 2px 5px;
+      }
+      a {
+        padding: 2px 9px;
+        color: $base-color-dark;
+        background-color: $base-color-light;
+        border: 1px solid $base-color;
+        border-radius: 50%;
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
+  }
 }
 
 #sidebar {
-  width: $sidebar-width;
+  width: 230px;
   float: right;
   font-size: 80%;
-  margin: 60px 8px 12px 0;
+  margin: 0 6px;
 
   .panel {
     float: right;
-    margin: 4px 0;
-    padding: 4px 6px 12px;
+    margin: 0 0 4px 0;
+    padding: 4px 0px 12px;
     border-radius: 4px;
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
@@ -181,48 +232,6 @@ fieldset {
   }
 }
 
-#content {
-  background-color: white;
-  margin-right: 250px;
-  margin-bottom: 20px;
-  
-  .content-inner {
-    padding: 8px 12px;
-  }
-  
-  .pagination {
-    margin: 18px 0;
-    text-align: center;
-    &>span >a {
-      font-size: 12px;
-      padding: 0 4px;
-      margin: 0px 3px;
-      color: $base-color-dark;
-      background-color: $base-color-light;
-      border: 1px solid $base-color;
-      border-radius: 4px;
-    }
-    .page {
-      a, &.gap, &.current {
-        font-size: 18px;
-        font-weight: bold;
-        margin: 0 2px;
-        padding: 2px 5px;
-      }
-      a {
-        padding: 2px 9px;
-        color: $base-color-dark;
-        background-color: $base-color-light;
-        border: 1px solid $base-color;
-        border-radius: 50%;
-        &:hover {
-          background-color: white;
-        }
-      }
-    }
-  }
-}
-
 #notice {
   position: absolute;
   top: 0;
@@ -233,4 +242,9 @@ fieldset {
   border-radius: 0 0 14px 14px;
   background-color: #C6301C;
   z-index: 999;
+}
+
+.mceLayout {
+  // to make richtext editor resizable
+  width: 100% !important;
 }
