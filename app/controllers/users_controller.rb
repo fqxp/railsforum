@@ -84,19 +84,10 @@ class UsersController < ApplicationController
     end
   end
   
-  private
-    def authorize_by_id
-      unless current_user.is_admin or params[:id].to_i == current_user[:id]
-        redirect_to new_user_session_url, :notice => I18n.t('.users.controller.permission_denied')
-      end
-    end
-  end
-  
 private
   def authorize_by_id
-    user = User.find(session[:user_id])
-    unless user.is_admin or params[:id].to_i == session[:user_id]
-      redirect_to login_url, :notice => I18n.t('.users.controller.permission_denied')
+    unless current_user.is_admin or params[:id].to_i == current_user[:id]
+      redirect_to new_user_session_url, :notice => I18n.t('.users.controller.permission_denied')
     end
   end
 end
