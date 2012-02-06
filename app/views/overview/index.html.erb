@@ -3,7 +3,11 @@
 
 <h1><%= t('.title') %></h1>
 
-<%= render(:partial => :talk, :collection => @current_talks) || render('no_talks') %>
+<% if @current_talks.empty? %>
+  <%= render('no_talks') %>
+<% else %>
+  <%= render(:partial => :talk, :collection => @current_talks) %>
+<% end %>
 
 <%= paginate @current_talks %>
 

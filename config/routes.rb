@@ -6,8 +6,7 @@ Railsforum::Application.routes.draw do
   resources :talks
   resources :categories
 
-  devise_for :users, :controllers => { :registrations => 'registrations' } do
-  end
+  devise_for :users, :controllers => { :registrations => 'registrations' } do ; end
   resources :users
   
   controller :admin do
