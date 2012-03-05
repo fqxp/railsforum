@@ -12,3 +12,6 @@ custom
 doc
 custom
 public/assets
+.*.swp
+.*.swo
+
