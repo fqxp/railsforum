@@ -39,7 +39,7 @@ namespace :deploy do
   end
 end
 
-#after 'deploy:update_code', :precompile_assets
+after 'deploy:update_code', :precompile_assets
 after 'deploy:update_code', :bundle_install
 after 'deploy:update_code', :link_db_config
 
@@ -54,7 +54,7 @@ task :link_db_config, :roles => :db do
   run "ln -sf #{deploy_to}/database.yml #{File.join(release_path, 'config')}"
 end
 
-#desc 'precompile assets'
-#task :precompile_assets, :roles => :web do
-#  run "cd #{release_path} && bundle exec rake assets:precompile"
-#end
+desc 'precompile assets'
+task :precompile_assets, :roles => :web do
+  run "cd #{release_path} && bundle exec rake assets:precompile"
+end
