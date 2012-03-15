@@ -13,8 +13,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # GET /posts/new
-  # GET /posts/new.json
+  # GET /users/new
+  # GET /users/new.json
   def new
     @user = User.new()
 

@@ -20,7 +20,7 @@
   <% end %>
 
   <fieldset>
-    <%= form_for @post, :html => { :id => 'new_post_form' }, :remote => true do |f| %>
+    <%= form_for @post, :html => { :id => 'new_post_form', :multipart => true }, :remote => true do |f| %>
       <%= render :partial => 'posts/form', :locals => { :post => @post } %>
       
       <div class="actions">

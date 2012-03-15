@@ -10,7 +10,7 @@ gem 'sqlite3'
 gem 'basic_active_model'
 
 # File uploading
-gem "paperclip", "~> 2.4"
+gem "paperclip", "~> 2.7"
 # Pagination
 gem "kaminari"
 

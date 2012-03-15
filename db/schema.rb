@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120121143733) do
+ActiveRecord::Schema.define(:version => 20120306202826) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(:version => 20120121143733) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "attachment_file_name"
+    t.string   "attachment_content_type"
+    t.string   "attachment_file_size"
+    t.string   "attachment_updated_at"
   end
 
   create_table "talk_visits", :force => true do |t|

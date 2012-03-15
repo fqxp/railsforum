@@ -19,4 +19,5 @@
     <div class="content">
       <%= post.rendered_text %>
     </div>
+    <%= link_to image_tag(post.attachment.url(:thumb)), post.attachment.url %>
   </div>
