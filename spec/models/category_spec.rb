@@ -1,8 +1,6 @@
 require 'spec_helper'
 
 describe Category do
-  before do
-  end
 
   it 'should not be valid without a name' do
     category = Factory.build(:category, :name => nil)
@@ -21,10 +19,10 @@ describe Category do
   end
 
   it 'should have a unique name' do
-    Factory.create(:category)
+    Factory.create(:category, :name => 'Category')
 
     expect {
-      Factory.create(:category)
-    }.to raise_error(ActiveRecord::RecordInvalid, /Name has already been taken/)
+      Factory.create(:category, :name => 'Category')
+    }.to raise_error(ActiveRecord::RecordInvalid, / has already been taken/)
   end
 end
