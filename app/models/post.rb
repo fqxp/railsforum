@@ -1,12 +1,15 @@
 require 'bb-ruby'
 
 class Post < ActiveRecord::Base
-  default_scope :order => 'created_at'
   validates :text, :presence => true
   validates :talk_id, :presence => true
+
   belongs_to :user
   belongs_to :talk
+
   attr_accessible :text, :talk_id, :created_at, :updated_at, :user_id, :attachment
+
+  default_scope :order => 'created_at'
 
   has_attached_file :attachment, :styles => {:thumb => '150x150'}
 

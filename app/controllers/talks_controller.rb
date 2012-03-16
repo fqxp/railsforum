@@ -5,7 +5,7 @@ class TalksController < ApplicationController
     @current_category = @talk.category
     @post = Post.new(:talk => @talk)
 
-    TalkVisit.mark_visited(@talk.id, current_user.id)
+    @talk.mark_visited(current_user.id)
   end
 
   def new

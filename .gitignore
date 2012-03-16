@@ -16,3 +16,4 @@ public/assets
 .*.swp
 .*.swo
 doc/*
+.rspec

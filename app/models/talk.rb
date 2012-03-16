@@ -1,11 +1,12 @@
 class Talk < ActiveRecord::Base
   validates :category_id, :presence => true
   validates :title, :presence => true
+
   belongs_to :category
   belongs_to :user
   has_many :posts
   has_many :talk_visits
-  
+
   attr_accessor :count_unread_posts
   attr_accessor :latest_post_at
 
@@ -26,21 +27,32 @@ class Talk < ActiveRecord::Base
       .group('posts.talk_id') \
       .order('latest_post_at_s DESC') \
       .page(page)
-      
+
     talks.each do |talk|
       # The following seems to be database-specific:
       # sqlite returns a string, while MySQL::Time object - we're trying
       # to be on the safe side
       talk.latest_post_at = DateTime.parse(talk['latest_post_at_s'].to_s)
-      talk.add_count_unread_posts! current_user_id
+      talk.count_unread_posts = count_unread_posts(talk.id, current_user_id)
     end
-    
-    talks
+
+    return talks
   end
 
-  def add_count_unread_posts!(current_user_id)
-    talk_visit = talk_visits.find_by_user_id(current_user_id)
-    self.count_unread_posts = talk_visit.nil? ? 0 : Post.where(:talk_id => id) \
-      .where('updated_at > ?', talk_visit.last_visited).count
+  def mark_visited(user_id)
+    # TODO: use update instead of save for existing records
+    talk_visit = TalkVisit.find_by_talk_id_and_user_id(id, user_id) || \
+      TalkVisit.new(:talk_id => id, :user_id => user_id)
+    talk_visit.last_visited = DateTime.now.utc
+    talk_visit.save
+  end
+
+private
+
+  def self.count_unread_posts(talk_id, current_user_id)
+    talk_visit = TalkVisit.find_by_talk_id_and_user_id(talk_id, current_user_id)
+    return (talk_visit.nil? ?
+      Post.where('talk_id = ?', talk_id).count
+      : Post.where('talk_id = ? AND updated_at > ?', talk_id, talk_visit.last_visited).count)
   end
 end

@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     @talk = @post.talk
     @post.user = current_user
 
-    TalkVisit.mark_visited(@talk.id, current_user.id)
+    @talk.mark_visited(current_user.id)
 
     if @post.save
       flash[:current_post_id] = @post.id

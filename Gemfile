@@ -48,11 +48,13 @@ gem 'capistrano'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-group :test do
+group :test, :development do
   # Pretty printed test output
   gem 'turn', :require => false
   gem 'factory_girl_rails', '~> 1.2'
   gem 'mocha', '~> 0.10.0'
+
+  gem 'rspec-rails', '~> 2.6'
 end
 
 group :production do
