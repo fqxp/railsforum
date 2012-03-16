@@ -8,10 +8,11 @@ tmp/
 *.pyo
 .project
 public/system/avatars
+public/system/attachments
 custom
 doc
 custom
 public/assets
 .*.swp
 .*.swo
-
+doc/*

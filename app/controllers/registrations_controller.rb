@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   # Based on: https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-edit-their-account-without-providing-a-password
   def update
     self.resource = resource_class.to_adapter.get!(send(:"current_#{resource_name}").to_key)
-    
+
     any_password = [:password, :password_confirmation, :current_password].any? do |field|
       params[resource_name][field].present?
     end
@@ -17,10 +17,10 @@ class RegistrationsController < Devise::RegistrationsController
     else
       clean_up_passwords(resource)
       respond_with_navigational(resource){ render_with_scope :edit }
-    end 
+    end
   end
-  
+
   def edit
     redirect_to edit_user_url(:id => current_user[:id])
-  end 
+  end
 end

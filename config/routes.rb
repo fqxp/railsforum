@@ -1,18 +1,18 @@
 Railsforum::Application.routes.draw do
   get 'overview/index'
   get 'admin' => "admin#index"
-  
-  resources :posts
+
+  resources :posts, :only => [:create, :update, :destroy, :edit]
   resources :talks
   resources :categories
 
   devise_for :users, :controllers => { :registrations => 'registrations' } do ; end
   resources :users
-  
+
   controller :admin do
     get 'admin/index' => 'admin#index'
   end
-  
+
 #  controller :users do
 #    get 'users/:id' => :show, :as => :user
 #  end
