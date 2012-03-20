@@ -1,0 +1,33 @@
+- content_for :jquery_script do
+  :plain
+    $('.new_talk_form').enable_submit_if_possible('textarea#post_text');
+    $('.new_talk_form textarea').rteditor();
+
+= form_for @talk, :html => { :class => 'new_talk_form' } do |f|
+  - if @talk.errors.any? or @post.errors.any?
+    #error_explanation
+      %h2= t('error_msg', :count => @post.errors.count)
+    
+      %ul
+      - @talk.errors.full_messages.each do |msg|
+        %li= msg
+
+      - @post.errors.full_messages.each do |msg|
+        %li= msg
+
+  .field
+    = f.label :title, t('.title')
+    = f.text_field :title
+
+  .field
+    = f.label :category, t('.category')
+    = f.select :category_id, Category.all.collect {|c| [c.name, c.id]}, {:include_blank => true}
+
+  - if @post.talk_id.nil?
+    = render :partial => 'posts/form', :locals => {:post => @post}
+
+  .actions
+    - if @talk.id.nil?
+      = f.submit t('.create_talk')
+    - else
+      = f.submit t('.update_talk')

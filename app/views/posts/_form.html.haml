@@ -1,0 +1,16 @@
+= fields_for(post) do |f|
+
+  = f.hidden_field :talk_id, :value => @talk.id
+
+  .field
+    - if post.new_record?
+      = f.label :text, t('.answer')
+    - else
+      = f.label :text, t('edit_answer')
+
+    = f.text_area :text, :size => '50x8', :id => "post_text_#{ post.id }"
+    #coded_text{:style => "display:none"}
+
+  .field
+    = f.label :attachment, t(".attachment")
+    = f.file_field :attachment

@@ -1,0 +1,21 @@
+- if flash[:current_post_id] == post.id
+  %a{:name => "current"}
+
+%div{:id => "post-<%= post.id %>", 
+     :class => (flash[:current_post_id] == post.id) ? "post current-post" : "post"}
+  .avatar
+    = link_to user_path(post.user) do
+      = image_tag post.user.avatar.url(:thumb)
+
+  %span.meta-info
+    %span.by-user
+      = link_to post.user.username, user_path(post.user)
+    %span.created-at
+      = human_time post.created_at
+    - if current_user[:id] == post.user_id
+      = link_to t('.edit'), edit_post_path(post.id), :remote => true, :class => 'edit_post'
+
+  .content
+    = post.rendered_text
+
+  = link_to image_tag(post.attachment.url(:thumb)), post.attachment.url

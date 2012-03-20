@@ -1,0 +1,21 @@
+.talk
+  %h2
+    = link_to talk do
+      %strong= talk.title
+
+  .info
+    %span.count-messages
+      = link_to talk do
+        =t '.messages', :count => talk.count_posts
+
+    %span.latest-post-by
+      = t '.latest_post_by'
+      = link_to user_path(talk.posts[0].user), :class => 'by-user' do
+        = image_tag talk.posts[0].user.avatar.url(:tiny)
+        = talk.posts.last.user.username
+
+    - unless talk.count_unread_posts.in? [nil?, 0]
+      %span.count-unread= t('.unread_posts', :count => talk.count_unread_posts)
+
+    %span.latest-post-at= human_time talk.latest_post_at
+    %span.category= talk.category.name

@@ -1,0 +1,6 @@
+fieldset
+  = form_for(post, :html => {:class => 'edit_post_form', :multipart => true}, :method => :put) do |f|
+    = render :partial => 'posts/form', :locals => {:post => post}
+
+    .actions
+      = f.submit t('.submit_post')

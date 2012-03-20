@@ -1,0 +1,65 @@
+%html
+  %head
+    %title= t('.forum_title')
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag "application"
+
+    :javascript
+      $(document).ready(function() {
+        if ($('#notice').text()) {
+          $('#notice').fadeIn().delay(3000).fadeOut('slow');
+        }
+        if ($('#alert').text()) {
+          $('#alert').fadeIn().delay(3000).fadeOut('slow');
+        }
+      });
+
+    %script
+      $(document).read(function() {
+      = yield :jquery_script
+      });
+
+    = csrf_meta_tags
+
+  %body
+    - if notice.present?
+      #notice{:style => "display:none"}= notice
+    - if alert.present?
+      #alert{:style => "display:none"}= alert
+
+    #wrap
+      #header
+        .navigation
+          - if user_signed_in?
+            - if current_user.is_admin
+              = link_to t('.administration'), admin_index_path
+
+            = link_to current_user.username, edit_user_path(current_user[:id])
+            = link_to t('.log_out'), destroy_user_session_path, :method => :delete
+
+      #content.clearfix
+
+        #sidebar
+          - if user_signed_in?
+            .panel
+              %h2= t('.categories')
+              %ul
+                %li>
+                  = link_to t('.start_page'), root_path, :class => ((request.path=='/') ? 'current' : '')
+
+                - @categories.each do |category|
+                  %li
+                    = link_to category, :class => ((defined?(@current_category) && category.id == @current_category.id) ? 'current' : '') do
+                      = category.name 
+                      %span.count= category.talks.count
+
+                = yield :navigation
+
+            .panel
+              %h2= t('.functions')
+              %ul
+                %li
+                  = link_to t('.invite'), new_user_invitation_path
+
+        #main
+          = yield

@@ -1,0 +1,12 @@
+- content_for :navigation
+
+%h1= t('.title')
+
+- if @current_talks.empty?
+  = render('no_talks')
+- else
+  = render(:partial => :talk, :collection => @current_talks)
+
+= paginate @current_talks
+
+= link_to t('.new_talk'), new_talk_path(:category_id => nil), :class => 'button'
