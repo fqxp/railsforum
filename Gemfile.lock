@@ -201,7 +201,7 @@ DEPENDENCIES
   passenger
   rails (= 3.1.1)
   rails-i18n
-  rspec-rails (~> 2.6)
+  rspec-rails (~> 2.8)
   sass-rails (~> 3.1.4)
   sqlite3
   therubyracer

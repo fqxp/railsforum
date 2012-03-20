@@ -12,6 +12,6 @@ FactoryGirl.define do
     realname 'User'
     password 'mysecret'
     is_admin false
-    language 'de'
+    language 'en'
   end
 end

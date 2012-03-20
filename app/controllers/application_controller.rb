@@ -10,7 +10,6 @@ protected
   end
 
 private
-  # Set locale from logged-in user information
   def set_locale_from_user
     if user_signed_in?
       begin

@@ -54,7 +54,7 @@ group :test, :development do
   gem 'factory_girl_rails', '~> 1.2'
   gem 'mocha', '~> 0.10.0'
 
-  gem 'rspec-rails', '~> 2.6'
+  gem 'rspec-rails', '~> 2.8'
 end
 
 group :production do
