@@ -1,9 +1,9 @@
 class TalksController < ApplicationController
   def show
-    @talk = Talk.find(params[:id])
+    @talk = Talk.find(params[:id].to_i)
     @posts = Post.where(:talk_id => @talk.id).order('created_at')
     @current_category = @talk.category
-    @post = Post.new(:talk => @talk)
+    @post = Post.new(:talk_id => @talk.id)
 
     @talk.mark_visited(current_user.id)
   end
@@ -16,11 +16,6 @@ class TalksController < ApplicationController
     end
 
     @post = Post.new
-  end
-
-  def edit
-    @talk = Talk.find(params[:id])
-    @post = Post.where(:talk_id => @talk.id).first
   end
 
   def create
@@ -45,22 +40,5 @@ class TalksController < ApplicationController
         render action: "new"
       end
     end
-  end
-
-  def update
-    @talk = Talk.find(params[:id])
-
-    if @talk.update_attributes(params[:talk])
-      redirect_to @talk, notice: 'Talk was successfully updated.'
-    else
-      render action: "edit"
-    end
-  end
-
-  def destroy
-    @talk = Talk.find(params[:id])
-    @talk.destroy
-
-    redirect_to talks_url
   end
 end
