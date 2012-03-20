@@ -33,7 +33,6 @@ private
       yield document
     else
       respond_to do |format|
-        #format.html { redirect_to new_user_session_url, :notice => I18n.t('.please_log_in') }
         format.html { head :forbidden }
         format.json { head :forbidden }
       end

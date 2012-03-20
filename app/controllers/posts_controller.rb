@@ -9,9 +9,10 @@ class PostsController < ApplicationController
 
     if @post.save
       flash[:current_post_id] = @post.id
-      redirect_to talk_path(@post.talk)+'#current',
+      redirect_to talk_path(@post.talk, :anchor => "current"),
         notice: I18n.t('.posts_controller.post_successfully_created')
     else
+      flash[:error] = I18n.t("posts_controller.post_create_failed")
       redirect_to talk_path(@post.talk)
     end
   end
@@ -19,13 +20,14 @@ class PostsController < ApplicationController
   def update
     with_owner_only(Post.find(params[:id])) do |post|
       @post = post
-      if false or @post.update_attributes(params[:post])
+
+      if @post.update_attributes(params[:post])
         flash[:current_post_id] = @post.id
-        redirect_to talk_path(@post.talk),
-          notice: 'Post was successfully updated.',
-          anchor: 'current'
+        redirect_to talk_path(@post.talk, :anchor => "current"),
+          notice: I18n.t("posts_controller.post_successfully_updated")
       else
-        redirect_to talk_path(@post.talk), error: 'Post could not be updated.'
+        flash[:error] = I18n.t("posts_controller.post_update_failed")
+        redirect_to talk_path(@post.talk)
       end
     end
   end
@@ -34,7 +36,7 @@ class PostsController < ApplicationController
     with_owner_only(Post.find(params[:id])) do |post|
       post.destroy
 
-      redirect_to talk_path(@post.talk),
+      redirect_to talk_path(post.talk),
         notice: 'Post was successfully deleted.',
         anchor: 'last'
     end

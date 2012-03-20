@@ -36,6 +36,9 @@ en:
 
   posts_controller:
     post_successfully_created: "Post was successfully created"
+    post_create_failed: "Post could not be created"
+    post_successfully_updated: "Post was successfully updated"
+    post_update_failed: "Post could not be updated"
 
   layouts:
     application:
