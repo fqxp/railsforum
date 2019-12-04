@@ -35,7 +35,7 @@ gem 'jquery-rails'
 
 gem 'minitest'
 
-gem 'devise', '~> 1.5.0'
+gem 'devise', '~> 1.5.4'
 gem 'devise_invitable', '~> 0.6.0'
 
 # To use ActiveModel has_secure_password
